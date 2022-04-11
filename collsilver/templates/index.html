@@ -1,15 +1,346 @@
-!<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-	<meta charset="utf-8">
+	{% load static %}
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>123321</title>
+	<title>КОЛЛОИДНОЕ СЕРЕБРО | КУРОРТМЕДСЕРВИС</title>
+	<meta name="description" content="Коллоидное серебро в каплях - природный пробиотик. Коллоидное серебро укрепляет иммунитет и обладает ярко выраженным противовирусным, антибактериальным и противогрибковым действием.">
+	<meta name="keywords" content="купить коллоидное серебро">
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="#">
+	<link rel="shortcut icon" type="image/x-icon" href="#">
+	<!-- OG Tags Для Снипетов-->
+	<meta property="og:title" content="КОЛЛОИДНОЕ СЕРЕБРО | КУРОРТМЕДСЕРВИС">
+	<meta property="og:description" content="Коллоидное серебро в каплях - природный пробиотик. Коллоидное серебро укрепляет иммунитет и обладает ярко выраженным противовирусным, антибактериальным и противогрибковым действием.">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="{% static 'img/serebro_kapli.jpg' %}">
+	<meta property="og:site_name" content="КОЛЛОИДНОЕ СЕРЕБРО">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/regular.css" integrity="sha384-zkhEzh7td0PG30vxQk1D9liRKeizzot4eqkJ8gB3/I+mZ1rjgQk+BSt2F6rT2c+I" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+	<!-- CSS -->
+	<link rel="stylesheet" href="{% static 'css/preloader.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/specifications.css' %}">
+	<link rel="stylesheet" href="{% static 'css/slick.css' %}">
+	<link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+	<link rel="stylesheet" href="{% static 'css/jquery.arcticmodal-0.3.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/media.css' %}">
 </head>
 <body>
-	<form action="/" method="POST">
-	    {% csrf_token %}
-	    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+	<!-- Preloader Start-->
+	<div id="page-preloader">
+		<div class="sk-folding-cube">
+		  <div class="sk-cube1 sk-cube"></div>
+		  <div class="sk-cube2 sk-cube"></div>
+		  <div class="sk-cube4 sk-cube"></div>
+		  <div class="sk-cube3 sk-cube"></div>
+		</div>
+	</div>
+	<!-- Preloader End-->
+	<header class="header" id="header" data-type="background" data-speed="5">
+		<div class="hat">
+			<div class="container">
+		 		<div class="row align-items-center">
+		 			<div class="col-lg-10 d-none d-lg-block menu-collapse">
+		 				<nav class="nav">
+		 					<ul class="nav__list d-flex justify-content-around">
+								<li class="nav__item">
+									<a href="#" class="nav__link">
+										Описание
+									</a>
+								</li>
+								<li class="nav__item">
+									<a href="#" class="nav__link">
+										Инструкция
+									</a>
+								</li>
+		 						<li class="nav__item">
+		 							<a href="#" class="nav__link">
+		 								Клинические исследования
+		 							</a>
+		 						</li>
+		 						<li class="nav__item">
+		 							<a href="#" class="nav__link">
+		 								Заказать
+		 							</a>
+		 						</li>
+		 						<li class="nav__item">
+		 							<a href="#" class="nav__link">
+		 								Контакты
+		 							</a>
+		 						</li>
+		 					</ul>
+		 				</nav>
+		 			</div>
+		 			<div class="col-6 col-sm-7 col-lg-2 offset-lg-0 d-flex justify-content-end">
+		 				<button type="button" class="tel-btn btn tel-btn-head" id="tel-btn">
+		 					<span>
+		 						Заказать на сайте
+		 					</span>
+		 				</button>
+		 				<button type="button" class="hamburger d-lg-none">
+		 					<i class="fa fa-bars"></i>
+		 				</button>
+		 			</div>
+		 		</div>
+		 	</div>
+		</div>
+		<div class="offer">
+			<div class="container">
+				<div class="row">
+		 			<div class="col">
+		 				<div class="offer-content">
+		 					<h1 class="main-title">
+			 					Коллоидное серебро
+			 				</h1>
+			 				<p class="main-text">
+			 					Коллоидное серебро. Какой-то девиз надо придумать!
+			 				</p>
+		 				</div>
+		 			</div>
+		 		</div>
+			</div>
+		</div>
+	 </header>
+	 <section class="confidence" id="confidence">
+	 	<div class="container">
+	 		<div class="row">
+	 			<div class="col-lg-12">
+	 				<h2 class="confidence-title">
+	 					Описание препарата
+	 				</h2>
+	 			</div>
+	 			<div class="col-md-6 col-lg-4">
+					<div class="img-wrapper">
+						<img src="{% static 'img/serebro_kapli.jpg' %}" alt="Фото коллоидное серебро" class="serebro_kapli">
+					</div>
+	 			</div>
+	 			<div class="col-md-6 col-lg-8">
+	 				<div class="confidence-item">
+						<p class="confidence-item__text">
+						   Коллоидное серебро в каплях - природный пробиотик. Коллоидное серебро укрепляет иммунитет и обладает ярко выраженным противовирусным, антибактериальным и противогрибковым действием.
+						</p>
+						<p class="confidence-item__text">
+							На этом сайте представлен оригинальный препарат КОЛЛОИДНОЕ СЕРЕБРО (Производитель Курортмедмедсервис), который вы можете купить по цене производителя с доставкой по Москве и России или оформить самовывоз.
+						</p>
+	 				</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </section>
+	 <section class="lab" id="lab">
+	 	<div class="container">
+	 		<div class="row">
+	 			<div class="col-lg-12">
+	 				<div class="lab-item">
+	 					<h3 class="lab-item__title">
+	 						<span class="red-font">Фармакологическая форма</span>
+	 					</h3>
+	 					<p class="lab-item__text">
+							Биологически активная добавка БАД к пищевым продуктам.
+	 					</p>
+	 				</div>
+	 			</div>
+	 			<div class="col-lg-12">
+					<div class="lab-item">
+						<h3 class="lab-item__title">
+							<span class="red-font">Фармакологическое действие</span>
+						</h3>
+						<p class="lab-item__text">
+							Антибактериальное широкого спектра действия, антимикробное, иммуномоделирующее.
+						</p>
+					</div>
+	 			</div>
+	 			<div class="col-lg-12">
+	 				<div class="lab-item">
+						<h3 class="lab-item__title">
+							<span class="red-font">Форма выпуска</span>
+						</h3>
+						<p class="lab-item__text">
+							Флакон с капельницей 50 мл.
+						</p>
+	 				</div>
+	 			</div>
+	 			<div class="col-lg-12">
+	 				<div class="lab-item">
+						<h3 class="lab-item__title">
+							<span class="red-font">Назначение</span>
+						</h3>
+						<p class="lab-item__text">
+							БАД Серебро (производитель Курортмедсервис) - источник коллоидного серебра, эффективного натурального антисептического средства с широким спектром антибактериального, противовирусного и противогрибкового действия для стимуляции неспецифического иммунитета и профилактики разного рода инфекций, воспалений, лечения поражений кожных и слизистых покровов.
+						</p>
+	 				</div>
+	 			</div>
+	 			<div class="col-lg-12">
+	 				<div class="lab-item">
+						<h3 class="lab-item__title">
+							<span class="red-font">Состав</span>
+						</h3>
+						<p class="lab-item__text">
+							Вода очищенная, коллоидное серебро (Silver colloidal). Содержание серебра - 1мг /100г.
+						</p>
+	 				</div>
+	 			</div>
+	 			<div class="col-lg-12">
+	 				<div class="lab-item">
+						<h3 class="lab-item__title">
+							<span class="red-font">Дополнительные сведения</span>
+						</h3>
+						<p class="lab-item__text">
+							В процессе проверки действия препарата КОЛЛОИДНОЕ СЕРЕБРО отмечено значительное снижение заболеваемости гриппом и другими ОРВИ в группе, принимавшей препарат «Серебро» в течение двух недель, по сравнению с контрольной группой. Особое значение имеет отсутствие заболеваемости ОРВИ в исследуемой группе в течение одного месяца после прекращения профилактического курса, в отличие от контрольной группы, где показатель заболеваемости составил 16%. Эти данные свидетельствуют о том, что эффект от приёма препарата стабильный, а не кратковременный, с положительным последействием. По данным исследований, препарат «Серебро» увеличивает антимикробную активность клеток системы фагоцитирующих мононуклеаров, равно как и содержание лимфоцитов, которые фагоцитируют ряд микроорганизмов, в том числе вирусы. Также представляется важным, что коллоидное серебро уничтожает не только самого возбудителя болезни, но и выделяемые им токсины. Препарат КОЛЛОИДНОЕ СЕРЕБРО стимулирует кроветворение и обменные процессы, способствует восстановлению поврежденных тканей, повышает адаптивные возможности организма. В заключениях о проведенных исследованиях было отмечено, что высокая эффективность и безопасность, хорошая переносимость и отсутствие побочных эффектов позволяют рекомендовать препарат «Серебро» для экстренной профилактики гриппа и ОРВИ в период эпидемических вспышек и сезонных подъемов заболеваемости, а также для профилактики осложнений течения данных заболеваний. Многолетняя практика доказывает высокую эффективность коллоидного серебра при местном применении при лечении вирусных и бактериальных ринитов, аденоидита и других заболеваниях ЛОР-органов.
+						</p>
+						<p class="lab-item__text">
+							Результаты исследований Антидопингового Центра показали, что в анализируемом образце не обнаружено допинговых лекарственных препаратов и их метаболитов, и препарат КОЛЛОИДНОЕ СЕРЕБРО (производитель Курортмедсервис) может быть использован в спортивно-медицинской практике.
+						</p>
+	 				</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </section>
+	 <section class="confidence" id="info">
+	 	<div class="container">
+	 		<div class="row">
+	 			<div class="col-lg-12">
+	 				<div class="mission">
+	 					<h4 class="mission__title">
+		 					Инструкция
+		 				</h4>
+		 				<div class="mission__wrapper d-flex justify-content-between">
+		 					<div class="mission__text">
+								<h5 class="mission-header">
+								   Показания к применению
+								</h5>
+								<p class="mission__paragraph">
+									<ul>
+										<li>простудные заболевания;</li>
+										<li>острые и хронические заболевания носоглотки, бронхов, придаточных пазух и лёгких;</li>
+										<li>заболевания кожи, например, юношески угри, некоторые виды псориаза, грибковые поражения кожи, ожоги, простудные высыпания на кожных покровах, укусы насекомых;</li>
+										<li>недостаточность работы надпочечников, что может проявиться общей слабостью, снижением умственной активности, скачками артериального давления и так далее;</li>
+										<li>ревматоидный артрит;</li>
+										<li>атеросклероз и другие нарушения.</li>
+									</ul>
+								</p>
+								<h5 class="mission-header">
+									Противопоказания
+								</h5>
+								<p class="mission__paragraph">
+									Индивидуальная непереносимость, беременность и кормление грудью.
+								</p>
+								<h5>
+									Побочные эффекты
+								</h5>
+								<p class="mission__paragraph">
+									В процессе лечения возможно развитие аллергических реакций.
+								</p>
+								<h5 class="mission-header">
+									Инструкция и дозировки по применению Коллоидного серебра
+								</h5>
+								<div class="mission-info">
+									<p class="mission__paragraph">
+										<b>Взрослым и детям после 14 лет:</b> внутрь, под язык, по 10 капель 2 раза в день в качестве терапевтической дозы и 4 раза в день на пике заболеваемости.
+									</p>
+									<p class="mission__paragraph">
+										<b>Детям от 1 года до 14 лет:</b> для лечения насморка, гайморита, полипов и воспалений в носоглотке закапывать в соответствии с возрастом по 1-3 капли в нос.
+										Курс – 10 дней с перерывом в 20 дней.
+									</p>
+									<p class="mission__paragraph">
+										<b>Внимание: препарат БАД «Серебро» не обжигает и не сушит слизистую носоглотки, поэтому разбавлять препарат нет необходимости. Это полностью готовый к употреблению водный раствор коллоидного серебра.</b>
+									</p>
+								</div>
+								</h5>
+								<p class="mission__paragraph">
+									В процессе лечения возможно развитие аллергических реакций.
+								</p>
+								<h5 class="mission-header">
+									Хранение
+								</h5>
+								<p class="mission__paragraph">
+									При комнатной температуре не выше 25 С, оберегая от воздействия солнечных лучей. Длительное хранения начатого флакона – на дверце холодильника.
+								</p>
+								<p class="mission__paragraph">
+									<b>Срок годности – 3 года.</b>
+								</p>
+		 					</div>
+		 				</div>
+	 				</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </section>
+	 <section class="research" id="research">
+	 	<div class="container">
+	 		<div class="row">
+	 			<div class="col-lg-12">
+	 				<div class="research-item">
+	 					<h3 class="research-item__title">
+	 						Клинические исследования
+	 					</h3>
+	 					<p class="research-item__text">
+							Препарат БАД СЕРЕБРО (коллоидное серебро от производителя Курортмедсервис) успешно прошёл клиническую апробацию и рекомендуется специалистами, как эффективное противориусное и иммуностимулирующее средство.
+	 					</p>
+		 				<a href="docs/serebro.pdf" target="_blank" class="research-doc">Просмотерть сертификат</a>
+	 				</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </section>
+	<footer class="footer" id="footer">
+		<div class="container">
+			<p>125424, г. Москва, вн.тер.г. муниципальный округ покровское-стрешнево, ш. волоколамское, д. 108</p>
+			<p>8 800 200-02-80</p>
+			<p>info@sis-tech.ru</p>
+			<p>ООО "СИС"</p>
+			<p>ИНН: 7733376350</p>
+			<p>ОГРН: 1217700536184</p>
+		</div>
+	</footer>
+
+
+	<!-- Modal Windows -->
+	<div style="display: none;">
+		<div class="box-modal" id="exampleModal">
+			<div class="to_order" id="exampleModal">
+				<h5 class="box-modal__title">
+					Заказать коллоидное серебро
+				</h5>
+				<p class="box-modal__text">
+					Заполните форму для заказа
+				</p>
+				<form action="#" class="form">
+					<input type="text" placeholder="ФИО" name="name" required>
+					<input type="email" placeholder="E-mail" name="email" required>
+					<input type="tel" placeholder="Телефон" name="tel" required>
+					
+					<!-- Количество - натуральное число -->
+					<div class="payment">
+						<span>Количество: </span><input id="payment_amount" class="amount" type="number" placeholder="Количество" name="amount" value="0" min="0" max="99" required>
+						<p class="total">Сумма: <span id="payment_total">0</span> руб.</p>
+					</div>
+					<input type="text" placeholder="Адрес" name="address" required>
+					<input type="text" placeholder="Комментарии" name="comment">
+					<button type="submit" class="box-modal-btn btn">Заказать</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- JS -->
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/slick.min.js' %}"></script>
+	<script src="{% static 'js/jquery.arcticmodal-0.3.min.js' %}"></script>
+	<script src="{% static 'js/parallax.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+	<!-- Share -->
+	<script src="https://yastatic.net/share2/share.js"></script>
 </body>
 </html>

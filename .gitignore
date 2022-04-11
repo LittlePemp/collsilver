@@ -148,5 +148,4 @@ dmypy.json
 # MY DODGE
 *sent_emails/
 *migrations/
-*static/
 *media/
