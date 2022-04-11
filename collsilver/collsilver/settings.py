@@ -49,7 +49,13 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+RECIPIENTS_EMAIL = ['cuencaldd@gmail.com']
+DEFAULT_FROM_EMAIL = 'Cuencaldd@ya.ru'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

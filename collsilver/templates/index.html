@@ -285,7 +285,7 @@
 	 					<p class="research-item__text">
 							Препарат БАД СЕРЕБРО (коллоидное серебро от производителя Курортмедсервис) успешно прошёл клиническую апробацию и рекомендуется специалистами, как эффективное противориусное и иммуностимулирующее средство.
 	 					</p>
-		 				<a href="docs/serebro.pdf" target="_blank" class="research-doc">Просмотерть сертификат</a>
+		 				<a href="media/serebro.pdf" target="_blank" class="research-doc">Просмотерть сертификат</a>
 	 				</div>
 	 			</div>
 	 		</div>
@@ -313,18 +313,25 @@
 				<p class="box-modal__text">
 					Заполните форму для заказа
 				</p>
-				<form action="#" class="form">
-					<input type="text" placeholder="ФИО" name="name" required>
-					<input type="email" placeholder="E-mail" name="email" required>
-					<input type="tel" placeholder="Телефон" name="tel" required>
+				<form action="#" class="form" method="POST">
+					
+					{% csrf_token %}
+
+					{{ form.username }}
+					{{ form.email }}
+					{{ form.phone_number }}
 					
 					<!-- Количество - натуральное число -->
 					<div class="payment">
-						<span>Количество: </span><input id="payment_amount" class="amount" type="number" placeholder="Количество" name="amount" value="0" min="0" max="99" required>
+						<span>Количество: </span>
+
+						{{ form.order_count }}
+						
 						<p class="total">Сумма: <span id="payment_total">0</span> руб.</p>
 					</div>
-					<input type="text" placeholder="Адрес" name="address" required>
-					<input type="text" placeholder="Комментарии" name="comment">
+					{{ form.address }}
+					{{ form.comment }}
+
 					<button type="submit" class="box-modal-btn btn">Заказать</button>
 				</form>
 			</div>

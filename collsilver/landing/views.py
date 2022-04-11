@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse
+from django.conf import settings
 from .forms import OrderForm
 
 def index(request):
@@ -12,13 +14,16 @@ def index(request):
             order_count = form.cleaned_data['order_count']
             address = form.cleaned_data['address']
             comment = form.cleaned_data['comment']
-            print(
-                f'{username}'
-                f' / {phone_number}'
-                f' / {email}'
-                f' / {order_count}'
-                f' / {address}'
-                f' / {comment}')
+
+            try:
+                send_mail('Коллоидное серебро', 
+                    f'{username} из {address} // {comment}',
+                    settings.DEFAULT_FROM_EMAIL,
+                    settings.RECIPIENTS_EMAIL
+                )
+            except Exception as error:
+                return HttpResponse(f'E-mail error - {error}')
+
             return render(request, 'index.html', context={'form': form})
     else:
         form = OrderForm()
