@@ -1215,7 +1215,7 @@ color: #081d42;
 	width: 50px;
 }
 
-.payment .amount {
+.payment .order_count {
 	padding-bottom: 0;
 	margin-bottom: 0;
 	border-bottom: none;
