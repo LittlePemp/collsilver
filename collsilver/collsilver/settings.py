@@ -1,8 +1,11 @@
+from dotenv import load_dotenv
 import os
 
 
+load_dotenv()
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = '&e+(5)ror*!-46j&#s$rfg(xprt0(3b-3c#)2j_$(w(g1ap8kq'
+SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
@@ -54,6 +57,6 @@ STATIC_URL = '/static/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-RECIPIENTS_EMAIL = ['cuencaldd@gmail.com']
-DEFAULT_FROM_EMAIL = 'Cuencaldd@ya.ru'
+RECIPIENTS_EMAIL = [os.getenv('RECIPIENT_EMAIL')]
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
