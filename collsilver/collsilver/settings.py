@@ -1,7 +1,6 @@
-from django.core.management.utils import get_random_secret_key  
-from dotenv import load_dotenv
 import os
 
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -55,7 +54,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 RECIPIENTS_EMAIL = [os.getenv('RECIPIENT_EMAIL')]

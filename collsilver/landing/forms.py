@@ -1,5 +1,6 @@
 from django import forms
 
+
 class OrderForm(forms.Form):
     username = forms.CharField(
         label='Your name',
@@ -8,15 +9,26 @@ class OrderForm(forms.Form):
     )
     phone_number = forms.CharField(
         max_length=16,
-        widget=forms.TextInput(attrs={'placeholder': 'Телефон'}),
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Телефон',
+            'type': 'tel'
+        }),
     )
     email = forms.EmailField(
-        widget=forms.TextInput(attrs={'placeholder': 'E-mail'})
+        widget=forms.TextInput(attrs={
+            'placeholder': 'E-mail',
+            'type': 'email'
+        })
     )
     order_count = forms.IntegerField(
-        min_value=1,
-        initial=1,
-        widget=forms.TextInput(attrs={'class': 'order_count'})
+        min_value=0,
+        initial=0,
+        widget=forms.TextInput(attrs={
+            'class': 'order_count',
+            'min': '0',
+            'max': '3500',
+            'type': 'number',
+        })
     )
     address = forms.CharField(
         max_length=255,
