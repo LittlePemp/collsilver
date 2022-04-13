@@ -1,3 +1,4 @@
+from django.core.management.utils import get_random_secret_key  
 from dotenv import load_dotenv
 import os
 
@@ -5,9 +6,9 @@ import os
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = get_random_secret_key()
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [os.getenv('HOST')]
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
