@@ -324,16 +324,21 @@
 					{{ form.email }}
 					{{ form.phone_number }}
 					
-					<!-- Количество - натуральное число -->
-					<div class="payment">
-						<span>Количество: </span>
-
-						{{ form.order_count }}
-						
-						<p class="total">Сумма: <span id="payment_total">0</span> руб.</p>
-					</div>
 					{{ form.address }}
 					{{ form.comment }}
+
+					<!-- Количество - натуральное число -->
+					<div class="payment">
+						
+						<div class="counter-wrapper d-flex">
+							<button class="counter-minus">-</button>
+							<div class="counter">{{ form.order_count }}</div>
+							<p class="counter-hide counter-display">0</p>
+							<button class="counter-plus">+</button>
+						</div>
+
+						<p class="total"><span style="font-weight: bold">Сумма:</span> <span id="payment_total">0</span> руб.</p>
+					</div>
 
 					<button type="submit" class="box-modal-btn btn">Заказать</button>
 				</form>

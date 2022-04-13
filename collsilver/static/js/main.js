@@ -20,7 +20,7 @@ $(function(){
 });	
 
 var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
-    V = 0.4;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
+    V = 0.15;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
 for (var i = 0; i < linkNav.length; i++) {
     linkNav[i].addEventListener('click', function(e) { //по клику на ссылку
         e.preventDefault(); //отменяем стандартное поведение
@@ -43,27 +43,57 @@ for (var i = 0; i < linkNav.length; i++) {
     }, false);
 }
 
+
+
 // Border for input
+const MIN_INPUT_COUNTER = 0;
+const MAX_INPUT_COUNTER = 99;
+const CURRENT_COST = 225;
+
 const inputs = document.querySelectorAll('input[type=number]');
 Array.from(inputs).forEach(input => {
-    const min = 0;
-    const max = 99;
-
     input.addEventListener('input', (e) => {
         const value = +input.value;
-        if (value > max) { input.value = max }
-        else if (value < min) { input.value = min }
+        if (value > MAX_INPUT_COUNTER) { input.value = MAX_INPUT_COUNTER }
+        else if (value < MIN_INPUT_COUNTER) { input.value = MIN_INPUT_COUNTER }
     })
 });
 
 // Order total
 var payment_amount = document.getElementById("id_order_count");
-payment_amount.oninput = function() {
+payment_amount.onchange = function() {
 
     var amount = parseInt(payment_amount.value);
-    var cost = 225;
+    var cost = CURRENT_COST;
     var total = cost * amount;
-
     var total_output = document.getElementById("payment_total");
     total_output.innerHTML = total;
 }
+
+
+
+// Counter
+var counterDisplayElem = document.querySelector('.counter-display');
+var counterMinusElem = document.querySelector('.counter-minus');
+var counterPlusElem = document.querySelector('.counter-plus');
+var count = MIN_INPUT_COUNTER;
+updateDisplay();
+counterPlusElem.addEventListener("click",()=>{
+    count++;
+    updateDisplay();
+});
+counterMinusElem.addEventListener("click",()=>{
+    count--;
+    updateDisplay();
+});
+function updateDisplay(){
+    if (count > MAX_INPUT_COUNTER) { count = MAX_INPUT_COUNTER }
+    if (count < MIN_INPUT_COUNTER) { count = MIN_INPUT_COUNTER }
+    counterDisplayElem.innerHTML = count;
+    payment_amount.value = count;
+
+    var cost = CURRENT_COST;
+    var total = cost * count;
+    var total_output = document.getElementById("payment_total");
+    total_output.innerHTML = total;
+};

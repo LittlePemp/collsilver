@@ -19,7 +19,7 @@
 }
 
 .nav__link{
-	font-size: 17px;
+	font-size: 20px;
 	font-family: 'Museo Sans Cyrl 700';
 	color: #edeff3;
 	transition: 0.3s all ease;
@@ -411,7 +411,7 @@
 
 .box-modal {
 	position: relative;
-	width: 410px;
+	width: 500px;
 	padding: 48px 52px 55px;
 	background: #fff;
 	color: #3c3c3c;
@@ -437,6 +437,7 @@
 	color: #9e9ea1;
 	padding-bottom: 16px;
 	margin-bottom: 28px;
+	font-size: 16px;
 }
 
 .box-modal-btn{
@@ -444,108 +445,23 @@
 	padding: 11px;
 	margin-top: -7px;
 	font-size: 13px;
-  font-family: 'Museo Sans Cyrl 700';
+	font-family: 'Museo Sans Cyrl 700';
+	background: #352D2A;
+	color: #fff;
 }
 
-/* Slider Services */
-
-.services-slider{
-	width: 290px;
-	margin: 38px auto 0;
-	text-align: center;
+.box-modal-btn:hover{
+	box-shadow: none;
+	color: #fff;
 }
-
-.services-slider__item:focus{
-	outline: none;
-}
-
-.services-slider__img{
-	margin: 0 auto 19px;
-	background: transparent;
-	border-radius: 50%;
-	border: 5px solid #656e8d;
-	overflow: hidden;
-	width: 140px;
-	height: 140px;
-}
-
-.services-slider__title{
-	font-size: 15.42px;
-	color: #747487;
-}
-
-.services-slider__text{
-	font-size: 13px;
-	letter-spacing: 0.02em;
-	margin: 16px 0;
-}
-
-.slick-arrow{
-	color: #404048;
-	font-size: 25px;
-}
-
-.services-slider__icon i{
-	font-size: 14px;
-	color: #2c60a0;
-}
-
-.slick-prev{
-	transition: .3s ease all;
-}
-
-.slick-next{
-	transition: .3s ease all;
-}
-
-.slick-prev:hover, .slick-prev:focus,.slick-next:hover, .slick-next:focus{
-	color: #404048;
-}
-
-.slick-prev:hover{
-	left: -29px;
-}
-
-.slick-next:hover{
-	right: -29px;
-}
-
-.slick-prev:before, .slick-next:before{
-	display: none;
-}
-
-.slick-dots li button:before {
-    font-family: 'slick';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 11px;
-    height: 11px;
-    content: '';
-    opacity: 1;
-    background: #bdc5d6;
-}
-
-.slick-dots li.slick-active button:before {
-    background: #8b9ab7;
-}
-
-.slick-dots{
-	bottom: -50px;
-}
-
-
 
 /* Form for order */
 
 .payment {
 	text-align: left;
 	color: #9e9ea1;
-	display: flex;
-	justify-content: space-between;
 	margin-bottom: 30px;
-	border-bottom: 1px solid #757888;	
-    padding-bottom: 16px;
+	padding-bottom: 16px;
     margin-bottom: 28px;
 }
 
@@ -556,5 +472,37 @@
 .payment .order_count {
 	padding-bottom: 0;
 	margin-bottom: 0;
-	border-bottom: none;
+	border: 1px solid #7c7c7e;
+	text-align: right;
+	padding: 0 3px 0 0;
+	border-radius: 4px;
+	line-height: 1.5em;
+}
+
+.counter-hide {
+	display: none;
+}
+
+.counter-wrapper {
+	font-size: 18px;
+}
+
+.counter-wrapper button {
+	color: #9e9ea1;
+}
+
+.counter-display {
+	border: 1px solid #9e9ea1;
+    width: 50px;
+    text-align: right;
+    padding: 0 3px 0 0;
+    border-radius: 3px;
+}
+
+.counter-minus, .counter-plus {
+	font-weight: bold;
+}
+
+.total {
+	margin-top: 20px;
 }
