@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = ')78sm)3p6fok(0#bbdt-nki8a6g5qi3@f^8(xack6&f1&9iq2g'
 DEBUG = True
 ALLOWED_HOSTS = [os.getenv('HOST')]
 INSTALLED_APPS = [
