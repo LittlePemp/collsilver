@@ -374,7 +374,7 @@
 }
 
 .nav__list_opened{
-	background: rgba(0,0,0,1);
+	background: rgba(94, 92, 92, .9);
 	border-radius: 12px;
 	padding: 20px;
 	-webkit-flex-direction: column;
@@ -407,7 +407,7 @@
 
 
 
-/* Modal window PHONE */
+/* Modal window */
 
 .box-modal {
 	position: relative;
@@ -512,6 +512,11 @@
 
 .price {
 	font-size: 18px;
+}
+
+.adaptive-wrapper {
+	display: flex;
+	justify-content: space-between;
 }
 
 

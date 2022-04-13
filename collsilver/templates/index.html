@@ -74,7 +74,7 @@
 		 					</ul>
 		 				</nav>
 		 			</div>
-		 			<div class="col-6 col-sm-7 col-lg-2 offset-lg-0 d-flex justify-content-end">
+		 			<div class="col-12 col-sm-12 col-lg-2 offset-lg-0 d-flex justify-content-end">
 		 				<button type="button" class="order-btn btn order-btn-head" id="order-btn">
 		 					<span>
 		 						Заказать на сайте
@@ -336,13 +336,16 @@
 
 					<!-- Количество - натуральное число -->
 					<div class="payment">
-						<p class="price"><span style="font-weight:bold">Цена: </span>225 руб.</p>
-						
-						<div class="counter-wrapper d-flex">
-							<button class="counter-minus">-</button>
-							<div class="counter">{{ form.order_count }}</div>
-							<p class="counter-hide counter-display">0</p>
-							<button class="counter-plus">+</button>
+
+						<div class="adaptive-wrapper">
+							<p class="price"><span style="font-weight:bold">Цена: </span>225 руб.</p>
+							
+							<div class="counter-wrapper d-flex">
+								<button class="counter-minus">-</button>
+								<div class="counter">{{ form.order_count }}</div>
+								<p class="counter-hide counter-display">0</p>
+								<button class="counter-plus">+</button>
+							</div>
 						</div>
 
 						<p class="total"><span style="font-weight: bold">Сумма:</span> <span id="payment_total">0</span> руб.</p>

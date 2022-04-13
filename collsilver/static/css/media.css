@@ -12,7 +12,7 @@
 		padding: 12px 9px;
 	}
 	.nav__link{
-		font-size: 14px;
+		font-size: 18px;
 	}
 	.location, .map-yandex{
 		position: static;
@@ -117,6 +117,9 @@
 		width: 100%;
 		margin-left: 0;
 	}
+	.offer-content {
+		width: auto;
+	}
 }
 
 /* 576-768px */
@@ -199,6 +202,18 @@
 	}
 	.err-block, .err-content{
 		text-align: center;
+	}
+	.box-modal {
+		width: 470px;
+	}
+	.payment {
+		display: block;
+	}
+	.total {
+		margin-top: 20px;
+	}
+	.counter-plus, .counter-minus {
+		font-size: 32px;
 	}
 }
 
@@ -297,6 +312,19 @@
 	}
 	.err-content{
 		width: auto;
+	}
+	
+	.box-modal {
+		width: 440px;
+	}
+	.payment {
+		display: block;
+	}
+	.total {
+		margin-top: 20px;
+	}
+	.counter-plus, .counter-minus {
+		font-size: 32px;
 	}
 }
 
