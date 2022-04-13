@@ -48,4 +48,5 @@ jobs:
             echo DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }} >> .env
             cd infra/
             sudo docker-compose -f docker-compose.yml up -d
-            sudo docker-compose exec web python manage.py collectstatic --no-input
+            sudo docker exec infra_web_1 python3 manage.py collectstatic --no-input
+
