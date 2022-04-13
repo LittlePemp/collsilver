@@ -19,7 +19,7 @@
 }
 
 .nav__link{
-	font-size: 17px;
+	font-size: 20px;
 	font-family: 'Museo Sans Cyrl 700';
 	color: #edeff3;
 	transition: 0.3s all ease;
@@ -30,14 +30,14 @@
 	color: #edeff3;
 }
 
-.tel-btn{
+.order-btn{
 	width: 155px;
 	padding: 8px 0;
 	font-size: 13px;
 	font-family: 'Museo Sans Cyrl 700';
 }
 
-.tel-btn:hover{
+.order-btn:hover{
 	color: #0073C3;
 }
 
@@ -144,54 +144,54 @@
 	height: 300px;
 }
 
-.confidence, .research{
+.description, .research, .instruction {
 	padding: 52px 0 72px;
 	background: #f1f1f3;
 	position: relative;
 }
 
-.confidence-title{
+.description-title{
   color: #081d42;
 	text-align: center;
 	margin-bottom: 41px;
 }
 
-.confidence-item{
+.description-item{
 	text-align: left;
 }
 
-.confidence-item__ico{
+.description-item__ico{
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
 	margin: 0 auto 20px;
 }
 
-.confidence-item__ico_1{
+.description-item__ico_1{
 	background: #c8cbdb url(../img/red-lamp.png) no-repeat center center;
 }
 
-.confidence-item__ico_2{
+.description-item__ico_2{
   background: #c8cbdb url(../img/red-box.png) no-repeat center center;
 }
 
-.confidence-item__ico_3{
+.description-item__ico_3{
   background: #c8cbdb url(../img/red-light.png) no-repeat center center;
 }
 
-.confidence-item__title{
+.description-item__title{
 	color: #081d42;
 	margin-bottom: 13px;
 }
 
-.confidence-item__text{
+.description-item__text{
 	margin-bottom: 30px;
 	font-size: 20px;
-	letter-spacing: 0.01em;
-	line-height: 1.2em;
+	letter-spacing: 0.02em;
+	line-height: 1.5em;
 }
 
-.confidence-btn{
+.description-btn{
 	width: 170px;
 	padding: 10px 0;
 	font-size: 16px;
@@ -204,15 +204,15 @@
 
 /* ------ Third section ------ */
 
-.lab{
+.description-detailed{
 	padding: 10px 0 50px;
 }
 /* 
-.lab-item{
+.description-detailed-item{
 	text-align: center;
 } */
 
-.lab-item__ico{
+.description-detailed-item__ico{
 	color: #fff;
 	background: #102e62;
 	width: 87px;
@@ -224,17 +224,17 @@
 	font-size: 50.11px;
 }
 
-.lab-item__title{
+.description-detailed-item__title{
   color: #081d42;
   margin-top: 30px;
   font-size: 34px;
 }
 
-.lab-item__text{
+.description-detailed-item__text{
 	margin-top: 10px;
 	letter-spacing: 0.02em;
-  line-height: 1.23em;
-  font-size: 18px;
+	line-height: 1.5em;
+	font-size: 18px;
 }
 
 /* ------ Forth section ------ */
@@ -244,51 +244,53 @@
 	padding: 37px 0 42px;
 }
 
-.mission ul {    
+.instruction_info ul {    
 	list-style-type: disc;
 }
 
-.mission li {    
+.instruction_info li {    
 	display: list-item;
 	margin-right: 8px;
+	font-size: 18px;
 }
 
 
-.mission__title, .news__title{
+.instruction_info__title, .news__title{
 	color: #081d42;
-  border-bottom: 3px solid #6f798b;
-  margin-bottom: 21px;
-  padding-bottom: 11px;
+	border-bottom: 3px solid #6f798b;
+	margin-bottom: 21px;
+	padding-bottom: 11px;
+	font-size: 30px;
 }
 
-.mission-header {
-color: #081d42;
-  margin-top: 21px;
+.instruction_info-header {
+	color: #081d42;
+	margin-top: 21px;
 }
 
-.mission .mission-header:first-child {
+.instruction_info .instruction_info-header:first-child {
 	margin-top: 0;
 }
 
-.mission__text{
+.instruction_info__text{
 	color: #081d42;
-  font-size: 15px;
-}
-/* 
-.mission__text:first-child{
-	width: 470px;
+	font-size: 18px;
+	margin-top: 20px;
 }
 
-.mission__text:last-child{
-	width: 370px;
-} */
+.instruction_info-info p {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
 
-.mission__paragraph{
+.instruction_info__paragraph{
 	line-height: 1.2em;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	font-size: 18px;
+	margin-top: 5px;
 }
 
-.mission__btn{
+.instruction_info__btn{
 	display: block;
 	color: #fff;
 	border: 2px solid #fff;
@@ -300,85 +302,9 @@ color: #081d42;
 	transition: 0.3s all ease;
 }
 
-.mission__btn:hover, .mission__btn:active, .mission__btn:focus{
+.instruction_info__btn:hover, .instruction_info__btn:active, .instruction_info__btn:focus{
 	color: #616c81;
 	background: #fff;
-}
-
-.news__item{
-	position: relative;
-	padding: 20px 0 23px;
-}
-
-.news__item:after{
-	content: '';
-	display: block;
-	width: 100%;
-	height: 2px;
-	background:  #6b768a;
-	position: absolute;
-	left: 0;
-	bottom: 0px;
-}
-
-.news__item:first-child{
-	padding-top: 0;
-}
-
-.news__link{
-	display: block;
-	transition: all 0.5s ease;
-}
-
-.news__link:hover .news__mini-title, .news__link:hover .news__time{
-	color: #fff;
-}
-
-.news__link:hover .news__overlay{
-	background: transparent;
-}
-
-.news__img-block:after{
-	position: absolute;
-	content: '';
-	width: 56px;
-	height: 56px;
-	background: rgba(12,19,58,.35);
-	top: 0;
-	left: 0;
-	transition: all 0.5s ease;
-}
-
-.news__item:not(:first-child) .news__img-block:after{
-	top: 20px;
-}
-
-.news__img{
-	width: 56px;
-	height: 56px;
-	min-width: auto;
-}
-
-.news__link:hover .news__img-block:after{
-	background: transparent;
-}
-
-.news__content{
-	margin-left: 15px;
-}
-
-.news__mini-title{
-	color: #d2d5d9;
-	transition: all 0.5s ease;
-	font-size: 12.5px;
-	font-family: 'Museo Sans Cyrl 700';
-	margin-bottom: 5px;
-}
-
-.news__time{
-	color: #9da4af;
-	font-size: 10.42px;
-	transition: all 0.5s ease;
 }
 
 /* ------ Forth section ------ */
@@ -413,29 +339,6 @@ color: #081d42;
 	margin-top: 20px;
 }
 
-.footer-nav{
-	padding: 40px 0 0px;
-	background: #3a4456;
-}
-
-.foot-nav-item{
-	margin-bottom: 45px;
-}
-
-.foot-nav-item__title{
-	color: #c9cace;
-	margin-bottom: 15px;
-}
-
-.foot-nav-item__link{
-	color: #898d97;
-}
-
-.foot-nav-item__link:hover{
-	color: #898d97;
-	border-bottom: 1px solid #898d97;
-}
-
 /* ------ Footer ------ */
 
 .footer{
@@ -444,589 +347,24 @@ color: #081d42;
   color: #aaabae;
   font-size: 12px;
   font-family: 'Museo Sans Cyrl 100';
-  border-bottom: 19px solid #58647a;
+  padding: 15px 0;
 }
 
-.footer-content__block:first-child{
-	margin-top: 32px;
-	margin-bottom: 13px;
-}
-
-.footer-content__w{
-		font-size: 15px;
-		border: 1px solid #aaabae;
-		width: 25px;
-		height: 25px;
-		box-sizing: border-box;
-		padding: 2px 5px;
-}
-
-.footer-content__element{
-	margin-left: 10px;
-	margin-top: -1px;
-}
-
-.footer-content__element span:first-child{
-  font-size: 10px;
-	display: block;
-}
-
-.footer-content__element span:last-child{
-	text-transform: uppercase;
-	font-size: 12px;
-	display: block;
-}
-
-.footer-privacy{
-	font-size: 12.08px;
-}
-
-.footer-privacy p{
-	margin-bottom: -3px;
-}
-
-.footer-privacy__bold{
-  font-family: 'Museo Sans Cyrl 700';
-}
-
-.footer-privacy__link{
-	color: #aaabae;
-	border-bottom: 1px solid #aaabae;
-}
-
-.footer-privacy__link:hover{
-	color: #aaabae;
-	border-bottom: none;
-}
-
-.footer .tel-btn{
-	margin: 67px 0 0;
-}
-
-.footer .logo-link img{
-	margin-top: 50px;
-}
-
-/* ________________________________________ */
-/* ________________________________________ */
-/* _____________ABOUT.HTML_________________ */
-/* ________________________________________ */
-/* ________________________________________ */
-
-/* ------ First section ------ */
-
-.header-about, .header-contacts, .header-services{
-	background: none;
-	padding: 0;
-}
-
-.hat-about{
-	background: #1f2531;
-}
-
-.about-title{
-	font-size: 37.5px;
-	margin-bottom: 8px;
-}
-
-.menu-view__link{
-	color: #49556b;
-	text-decoration: underline;
-	font-size: 15.62px;
-}
-
-.menu_view li{
-	display: inline-block;
-}
-
-.menu-view__item:before{
-	content: '→';
-	display: inline-block;
-	margin: 0 5px;
-}
-
-.menu-view__item_first:before{
-	display: none;
-}
-
-.menu-view__link:hover{
-	color: #49556b;
-}
-
-/* ------ Second section ------ */
-
-/* In specifications.css */
-
-
-/* ------ Third section ------ */
-
-.advantages{
-	padding: 47px 0 8px;
-}
-
-.advantages-title{
-	margin-bottom: 27px;
-}
-
-.advantages-text{
-	letter-spacing: 0.01em;
-	font-size: 15px;
-	margin-bottom: 50px;
-}
-
-.advantages-list{
-	border-top: 2px solid  #e5e6e8;
-	padding-top: 37px;
-}
-
-.advantages-item{
-	margin-bottom: 35px;
-	position: relative;
-}
-
-.advantages-item:after{
-	content: '';
-	display: block;
-	width: 80%;
-	height: 2px;
-	position: absolute;
-	background: #e5e6e8;
-	bottom: 0;
-	left: 0;
-}
-
-.advantages-ico{
-	width: 60px;
-	height: 60px;
-	margin: 0 20px 0 10px;
-	background: url(../img/scale.png) no-repeat center center;
-	border: 2px solid #1b3869;
-	border-radius: 50%;
-}
-
-.advantages-item__content{
-	width: 87%;
-}
-
-.advantages-item__title{
-	margin-bottom: 14px;
-	letter-spacing: 0.02em;
-	font-size: 18px;
-	font-family: 'Museo Sans Cyrl 700';
-}
-
-.advantages-item__text{
-	letter-spacing: -0.02em;
-	margin-bottom: 27px;
-}
-
-.advantages-item__mini-text_last{
-	margin-bottom: 0;
-}
-
-/* ------ Fourth section ------ */
-
-.our-power{
-	padding: 10px 0 77px;
-}
-
-.our-power-title{
-	margin-bottom: 39px;
-}
-
-.power-wrapper{
-	position: relative;
-}
-
-.power-link{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(58,68,86,.69);
-	justify-content: center;
-	-ms-align-items: center;
-	align-items: center;
-	box-shadow: 0 0 0 7px #9a97a7; 
-	opacity: 0;
-	transition: .3s all ease;
-}
-
-.power-link i{
-	font-size: 29px;
-	color: #fff;
-}
-
-.power-link:hover{
-	opacity: 1;
-}
-
-
-/* ________________________________________ */
-/* ________________________________________ */
-/* _____________CONTACTS.HTML______________ */
-/* ________________________________________ */
-/* ________________________________________ */
-
-/* ------ First section ------ */
-
-/* Standart hat */
-
-/* ------ Second section ------ */
-
-/* In specifications.css */
-
-/* ------ Third section ------ */
-
-.map-section{
-	position: relative;
-	min-height: 440px;
-}
-
-.map-yandex{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 440px;
-	z-index: 20;
-}
-
-.map-yandex .map{
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.location{
-	position: relative;
-}
-
-.office{
-	background: rgba(104,120,147,.85);
-	color: #fff;
-	width: 470px;
-	box-sizing: border-box;
-	padding: 20px 36px 54px;
-	border-radius: 3px;
-	margin-top: 50px;
-	z-index: 20;
-}
-
-.office:before{
-	content: '';
-	width: 0;
-	height: 48px;
-	display: block;
-	border-right: 23px solid rgba(104,120,147,.85);
-	border-top: 23px solid transparent;
-	border-bottom: 23px solid transparent;
-	position: absolute;
-	left: -8px;
-	top: 62px;
-	border-radius: 0 0 0 3px;
-}
-
-.office__hat{
-	padding-bottom: 24px;
-	border-bottom: 2px solid rgba(154,161,173,.85);
-	margin-bottom: 45px;
-}
-
-.office-socials{
-	width: 135px;
-	justify-content: space-between;
-	margin-left: auto;
-}
-
-.office-socials__links{
-	color: #fff;
-	border: 2px solid #fff;
-	padding: 5px 5px 3px;
-	transition: 0.3s all ease;
-}
-
-.office-socials__links:hover{
-	color: #fff;
-}
-
-.office__content{
-	justify-content: space-between;
-}
-
-.office__left{
-	width: 50%;
-}
-
-.phones{
-	font-size: 16px;
-}
-
-.phones__item{
-	color: #fff;
-	display: block;
-}
-
-.phones__item:hover{
-	color: #fff;
-}
-
-.phones__item span:first-child i{
-	transform: rotate(90deg);
-}
-
-.adress{
-	margin: 25px 0;
-}
-
-.adress__text{
-	letter-spacing: 0.08em;
-}
-
-.adress__text:first-child{
-	letter-spacing: 0.15em;
-}
-
-.adress i{
-	margin-right: 8px;
-}
-
-.office__right{
-	width: 48%;
-}
-
-.office__text{   margin-bottom: 14px;   font-size: 12px; }
-
-.mail-info a{
-	color: #fff;
-}
-
-.mail-info a:hover{
-	color: #fff;
-}
-
-.mail-info i{
-	margin-right: 8px;
-}
-
-/* ________________________________________ */
-/* ________________________________________ */
-/* _____________SERVICES.HTML______________ */
-/* ________________________________________ */
-/* ________________________________________ */
-
-/* ------ Third section ------ */
-
-.service{
-	background: url(../img/art-school/bg_offer.jpg) repeat-x center center / cover;
-	padding: 34px 0 39px;
-	color: #fff;
-	font-size: 15px;
-	letter-spacing: 0.02em;
-}
-
-.ser-img{
-	margin: 0 auto;
-	display: block;
-	border: 7px solid #b2b6c1;
-	border-radius: 50%;
-}
-
-.ser-title{
-	font-size: 25px;
-	line-height: 1em;
-	margin-bottom: 15px;
-	font-family: 'Museo Sans Cyrl 700';
-}
-
-.mini-nav{
-	border: 2px solid #9a9ca6;
-	border-radius: 5px;
-	padding: 20px 25px;
-}
-
-.mini-nav__item{
-	margin-bottom: 10px;
-}
-
-.mini-nav span{
-	font-size: 12.5px;
-	font-family: Arial, sans-serif;
-}
-
-.mini-nav__link:before{
-	content: '→';
-	display: inline;
-}
-
-.mini-nav__link{
-	color: #fff;
-	letter-spacing: 0.06em;
-	margin-left: 10px;
-}
-
-.mini-nav__link:hover{
-	color: #fff;
-	text-decoration: underline;
-}
-
-
-/* ------ Fourth section ------ */
-
-.sec-category-sect{
-	letter-spacing: 0.02em;
-}
-
-.sec-category{
-	padding: 53px 0 55px;
-}
-
-.sec-category__title{
-	margin-bottom: 25px;
-}
-
-.sec-category__text{
-	font-size: 15px;
-	margin-bottom: 15px;
-	letter-spacing: 0.005em;
-}
-
-.sidebar{
-	background: #fafafb;
-	padding: 50px 0 0;
-	letter-spacing: 0;
-	height: 100%;
-}
-
-.sidebar-nav{
-	margin-bottom: 50px;
-}
-
-.sidebar-nav__title{
-	margin-bottom: 45px;
-	font-size: 17.92px;
-	margin-left: 40px;
-	color: #989eaa;
-}
-
-.sidebar-nav__list{
-	border-top: 1px solid #dfdfe8;
-	border-bottom: 1px solid #dfdfe8;
-}
-
-.sidebar-nav__item{
-	border-bottom: 1px solid #dfdfe8;
-	padding: 10px 38px;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: flex-start;
-	position: relative;
-}
-
-.sidebar-nav__item:before{
-	content: '';
-	min-width: 11px;
-	height: 11px;
-	display: inline;
-	background: #aeaeb9;
-	box-sizing: border-box;
-	border-radius: 3px;
-	position: absolute;
-	top: 15px;
-	left: 17px;
-}
-
-.sidebar-nav__link{
-	color: #747487;
-	font-family: 'Museo Sans Cyrl 700';
-	margin-left: 10px;
-}
-
-.sidebar-nav__link:hover{
-  color: #747487;
-}
-
-.sidebar-com__title{
-	font-size: 17.92px;
-	margin-left: 40px;
-	color: #989eaa;
-}
-
-/* ________________________________________ */
-/* ________________________________________ */
-/* _____________ERROR404___________________ */
-/* ________________________________________ */
-
-.err404{
-	background: #fff;
-	color: #004275;
-	padding: 200px 0;
-}
-
-.error{
+.footer p, .footer a {
 	text-align: center;
+	margin-top: 10px;
 }
 
-.err__img{
-	max-width: 100%;
-}
-
-.error-block__title{
-	font-size: 90px;
-	position: relative;
-	width: 180px;
-	margin: 0 auto 10px;
-}
-
-.error-block__title:after{
-	content: 'Упс!';
-	color: #f1f1f3;
-	font-size: 50px;
+.footer-link{
+	color: #aaabae;
 	display: block;
-	padding: 8px 16px;
-	background: #000;
-	position: absolute;
-	right: -140px;
-	top: -20px;
-	border-radius: 5px;
+	text-decoration: none;
+	font-size: 18px;
 }
 
-.error-content__mini-title{
-	margin-bottom: 15px;
-}
-
-.err-content{
-	width: 305px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-.error-content__text{
-	margin-bottom: 15px;
-	font-size: 16px;
-}
-
-.err-nav{
-	width: 600px;
-	margin: 0 auto 20px;
-}
-
-.err-nav a{
-	display: block;
-	padding: 15px;
-	font-size: 20px;
-	color: #004275;
-	border: 2px solid transparent;
-	transition: .3s ease all;
-}
-
-.err-nav a:hover{
-	border: 2px solid red;
-	color: red;
+.footer-link:hover{
+	color: #aaabae;
+	text-decoration: underline;
 }
 
 
@@ -1036,7 +374,7 @@ color: #081d42;
 }
 
 .nav__list_opened{
-	background: rgba(0,0,0,1);
+	background: rgba(94, 92, 92, .9);
 	border-radius: 12px;
 	padding: 20px;
 	-webkit-flex-direction: column;
@@ -1069,11 +407,11 @@ color: #081d42;
 
 
 
-/* Modal window PHONE */
+/* Modal window */
 
 .box-modal {
 	position: relative;
-	width: 410px;
+	width: 500px;
 	padding: 48px 52px 55px;
 	background: #fff;
 	color: #3c3c3c;
@@ -1099,6 +437,7 @@ color: #081d42;
 	color: #9e9ea1;
 	padding-bottom: 16px;
 	margin-bottom: 28px;
+	font-size: 16px;
 }
 
 .box-modal-btn{
@@ -1106,118 +445,109 @@ color: #081d42;
 	padding: 11px;
 	margin-top: -7px;
 	font-size: 13px;
-  font-family: 'Museo Sans Cyrl 700';
+	font-family: 'Museo Sans Cyrl 700';
+	background: #352D2A;
+	color: #fff;
 }
 
-/* Slider Services */
-
-.services-slider{
-	width: 290px;
-	margin: 38px auto 0;
-	text-align: center;
+.box-modal-btn:hover{
+	box-shadow: none;
+	color: #fff;
 }
-
-.services-slider__item:focus{
-	outline: none;
-}
-
-.services-slider__img{
-	margin: 0 auto 19px;
-	background: transparent;
-	border-radius: 50%;
-	border: 5px solid #656e8d;
-	overflow: hidden;
-	width: 140px;
-	height: 140px;
-}
-
-.services-slider__title{
-	font-size: 15.42px;
-	color: #747487;
-}
-
-.services-slider__text{
-	font-size: 13px;
-	letter-spacing: 0.02em;
-	margin: 16px 0;
-}
-
-.slick-arrow{
-	color: #404048;
-	font-size: 25px;
-}
-
-.services-slider__icon i{
-	font-size: 14px;
-	color: #2c60a0;
-}
-
-.slick-prev{
-	transition: .3s ease all;
-}
-
-.slick-next{
-	transition: .3s ease all;
-}
-
-.slick-prev:hover, .slick-prev:focus,.slick-next:hover, .slick-next:focus{
-	color: #404048;
-}
-
-.slick-prev:hover{
-	left: -29px;
-}
-
-.slick-next:hover{
-	right: -29px;
-}
-
-.slick-prev:before, .slick-next:before{
-	display: none;
-}
-
-.slick-dots li button:before {
-    font-family: 'slick';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 11px;
-    height: 11px;
-    content: '';
-    opacity: 1;
-    background: #bdc5d6;
-}
-
-.slick-dots li.slick-active button:before {
-    background: #8b9ab7;
-}
-
-.slick-dots{
-	bottom: -50px;
-}
-
-
 
 /* Form for order */
 
 .payment {
 	text-align: left;
 	color: #9e9ea1;
+	margin-bottom: 30px;
+	padding-bottom: 16px;
+    margin-bottom: 28px;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 30px;
-	border-bottom: 1px solid #757888;	
-    padding-bottom: 16px;
-    margin-bottom: 28px;
 }
 
 .payment input {
 	width: 50px;
 }
 
-.payment .amount {
+.payment .order_count {
 	padding-bottom: 0;
 	margin-bottom: 0;
-	border-bottom: none;
+	border: 1px solid #7c7c7e;
+	text-align: right;
+	padding: 0 3px 0 0;
+	border-radius: 4px;
+	line-height: 1.5em;
 }
 
+.counter-hide {
+	display: none;
+}
+
+.counter-wrapper {
+	font-size: 18px;
+}
+
+.counter-wrapper button {
+	color: #9e9ea1;
+}
+
+.counter-display {
+	border: 1px solid #9e9ea1;
+    width: 50px;
+    text-align: right;
+    padding: 0 3px 0 0;
+    border-radius: 3px;
+}
+
+.counter-minus, .counter-plus {
+	font-weight: bold;
+}
+
+.total {
+	margin-top: 0px;
+	width: 178px;
+}
+
+.price {
+	font-size: 18px;
+}
+
+.adaptive-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+/* Price section */
+
+.description-price {
+	display: flex;
+	align-items: center;
+}
+
+.desc-order-btn {
+	background: #23A8F2!important;
+	color: #fff!important;
+	transition: .2s;
+}
+
+.desc-order-btn:hover, .desc-order-btn:active, .desc-order-btn:focus{
+	box-shadow: 0 0 5px 5px rgba(35,168,242,.4)!important;
+}
+
+.old-price {
+	font-size: 16px;
+	text-decoration: line-through;
+	text-decoration-color: red;
+	margin-right: 10px;
+}
+
+.new-price {
+	font-size: 22px;
+	font-weight: bold;
+	color: red;
+	margin-right: 20px;
+}

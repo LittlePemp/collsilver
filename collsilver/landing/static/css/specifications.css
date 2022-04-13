@@ -21,7 +21,8 @@ a, button{
 }
 
 p{
-	line-height: 1.3em;
+	line-height: 1.5em;
+	font-size: 18px;
 }
 
 .logo, .power-example, .ser-img{
@@ -46,22 +47,22 @@ h1{
 }
 
 h2{
-	font-size: 29.17px;
+	font-size: 35px;
 	font-family: 'Museo Sans Cyrl 700';
 }
 
 h3{
-	font-size: 24px;
+	font-size: 30px;
 	font-family: 'Museo Sans Cyrl 100';
 }
 
 h4{
-	font-size: 23px;
+	font-size: 25px;
   font-family: 'Museo Sans Cyrl 700';
 }
 
 h5{
-	font-size: 21px;
+	font-size: 22px;
   font-family: 'Museo Sans Cyrl 700';
 }
 
@@ -78,6 +79,18 @@ a, a:hover, a:active, a:focus{
 input, input:hover, input:focus, input:active,
 button, button:hover, button:focus, button:active{
 	outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 button{
@@ -108,132 +121,7 @@ button:hover{
 	color: #b81c31;
 }
 
-/* Local menu */
-
-.local-nav{
-	background: #fafafb;
-	padding: 73px 0;
-}
-
-.local-nav_about{
-	padding: 73px 0;
-}
-
-.local-nav_services{
-	padding: 73px 0 60px;
-}
-
-.local-nav_services .loc-nav-list__link{
-	padding: 13px;
-}
-
-.local-nav_contacts{
-	padding: 73px 0 60px;
-}
-
-.local-nav_contacts .loc-nav-list__link{
-	padding: 9px 29px;
-}
-
-.loc-nav-list{
-	justify-content: flex-end;
-}
-
-.loc-nav-list__link{
-	border: 2px solid transparent;
-  color: #a1a6af;
-  display: block;
-	padding: 13px 18px;
-	font-size: 15.83px;
-	transition: .15s ease all;
-  font-family: 'Museo Sans Cyrl 300';
-  letter-spacing: -0.02em;
-	text-align: left;
-}
-
-.loc-nav-list__item:hover .loc-nav-list__link{
-	border: 2px solid #b81c31;
-}
-
-.loc-nav-list__link:active, .loc-nav-list__link:focus{
-	color: #b81c31;
-	border: 2px solid #b81c31;
-}
-
-.loc-nav-list__title{
-  color: #a1a6af;
-  font-size: 15.83px;
-  display: block;
-  font-family: 'Museo Sans Cyrl 700';
-}
-
-.loc-nav-list__item:hover .loc-nav-list__title, .loc-nav-list__item:hover .loc-nav-list__link{
-	color: #b81c31;
-}
-
-.loc-nav-list__link:active .loc-nav-list__title, .loc-nav-list__link:focus .loc-nav-list__title{
-	color: #b81c31;
-}
-
-/* Consultation */
-
-
-.consult{
-	background: url(../img/conference-call.png) no-repeat 97% 92%;
-	padding: 25px 30px 27px;
-	border: 2px solid #e3e4e6;
-	border-radius: 7px;
-	width: 470px;
-	margin-top: 32px;
-}
-
-.consult__title{
-	font-size: 16px;
-	margin-bottom: 18px;
-}
-
-.consult__wrapper{
-	-ms-align-items: center;
-	align-items: center;
-	margin-bottom: 14px;
-}
-
-.consult__btn{
-  font-family: 'Museo Sans Cyrl 700';
-  color: #b81c31;
-  border: 2px solid #b81c31;
-  border-radius: 2px;
-  padding: 8px 0;
-  width: 157px;
-  text-align: center;
-  transition: .3s ease all;
-  background: transparent;
-}
-
-.consult__btn:hover{
-	color: #fff;
-	background: #b81c31;
-}
-
-.consult__tel{
-  font-family: 'Museo Sans Cyrl 700';
-  color: #585f6b;
-  margin-left: 16px;
-  transition: .3s ease all;
-}
-
-.consult__tel:hover{
-	color: #b81c31;
-}
-
-.consult__text{
-  font-size: 12px;
-  color: #888d95;
-  width: 237px;
-}
-
 .hamburger{
-	
 	color: #fff;
 	margin-left: 15px;
 	font-size: 26px;
