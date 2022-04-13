@@ -30,14 +30,14 @@
 	color: #edeff3;
 }
 
-.tel-btn{
+.order-btn{
 	width: 155px;
 	padding: 8px 0;
 	font-size: 13px;
 	font-family: 'Museo Sans Cyrl 700';
 }
 
-.tel-btn:hover{
+.order-btn:hover{
 	color: #0073C3;
 }
 
@@ -144,54 +144,54 @@
 	height: 300px;
 }
 
-.confidence, .research{
+.description, .research, .instruction {
 	padding: 52px 0 72px;
 	background: #f1f1f3;
 	position: relative;
 }
 
-.confidence-title{
+.description-title{
   color: #081d42;
 	text-align: center;
 	margin-bottom: 41px;
 }
 
-.confidence-item{
+.description-item{
 	text-align: left;
 }
 
-.confidence-item__ico{
+.description-item__ico{
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
 	margin: 0 auto 20px;
 }
 
-.confidence-item__ico_1{
+.description-item__ico_1{
 	background: #c8cbdb url(../img/red-lamp.png) no-repeat center center;
 }
 
-.confidence-item__ico_2{
+.description-item__ico_2{
   background: #c8cbdb url(../img/red-box.png) no-repeat center center;
 }
 
-.confidence-item__ico_3{
+.description-item__ico_3{
   background: #c8cbdb url(../img/red-light.png) no-repeat center center;
 }
 
-.confidence-item__title{
+.description-item__title{
 	color: #081d42;
 	margin-bottom: 13px;
 }
 
-.confidence-item__text{
+.description-item__text{
 	margin-bottom: 30px;
 	font-size: 20px;
-	letter-spacing: 0.01em;
-	line-height: 1.2em;
+	letter-spacing: 0.02em;
+	line-height: 1.5em;
 }
 
-.confidence-btn{
+.description-btn{
 	width: 170px;
 	padding: 10px 0;
 	font-size: 16px;
@@ -204,15 +204,15 @@
 
 /* ------ Third section ------ */
 
-.lab{
+.description-detailed{
 	padding: 10px 0 50px;
 }
 /* 
-.lab-item{
+.description-detailed-item{
 	text-align: center;
 } */
 
-.lab-item__ico{
+.description-detailed-item__ico{
 	color: #fff;
 	background: #102e62;
 	width: 87px;
@@ -224,17 +224,17 @@
 	font-size: 50.11px;
 }
 
-.lab-item__title{
+.description-detailed-item__title{
   color: #081d42;
   margin-top: 30px;
   font-size: 34px;
 }
 
-.lab-item__text{
+.description-detailed-item__text{
 	margin-top: 10px;
 	letter-spacing: 0.02em;
-  line-height: 1.23em;
-  font-size: 18px;
+	line-height: 1.5em;
+	font-size: 18px;
 }
 
 /* ------ Forth section ------ */
@@ -244,51 +244,53 @@
 	padding: 37px 0 42px;
 }
 
-.mission ul {    
+.instruction_info ul {    
 	list-style-type: disc;
 }
 
-.mission li {    
+.instruction_info li {    
 	display: list-item;
 	margin-right: 8px;
+	font-size: 18px;
 }
 
 
-.mission__title, .news__title{
+.instruction_info__title, .news__title{
 	color: #081d42;
-  border-bottom: 3px solid #6f798b;
-  margin-bottom: 21px;
-  padding-bottom: 11px;
+	border-bottom: 3px solid #6f798b;
+	margin-bottom: 21px;
+	padding-bottom: 11px;
+	font-size: 30px;
 }
 
-.mission-header {
-color: #081d42;
-  margin-top: 21px;
+.instruction_info-header {
+	color: #081d42;
+	margin-top: 21px;
 }
 
-.mission .mission-header:first-child {
+.instruction_info .instruction_info-header:first-child {
 	margin-top: 0;
 }
 
-.mission__text{
+.instruction_info__text{
 	color: #081d42;
-  font-size: 15px;
-}
-/* 
-.mission__text:first-child{
-	width: 470px;
+	font-size: 18px;
+	margin-top: 20px;
 }
 
-.mission__text:last-child{
-	width: 370px;
-} */
+.instruction_info-info p {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
 
-.mission__paragraph{
+.instruction_info__paragraph{
 	line-height: 1.2em;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	font-size: 18px;
+	margin-top: 5px;
 }
 
-.mission__btn{
+.instruction_info__btn{
 	display: block;
 	color: #fff;
 	border: 2px solid #fff;
@@ -300,7 +302,7 @@ color: #081d42;
 	transition: 0.3s all ease;
 }
 
-.mission__btn:hover, .mission__btn:active, .mission__btn:focus{
+.instruction_info__btn:hover, .instruction_info__btn:active, .instruction_info__btn:focus{
 	color: #616c81;
 	background: #fff;
 }
@@ -413,29 +415,6 @@ color: #081d42;
 	margin-top: 20px;
 }
 
-.footer-nav{
-	padding: 40px 0 0px;
-	background: #3a4456;
-}
-
-.foot-nav-item{
-	margin-bottom: 45px;
-}
-
-.foot-nav-item__title{
-	color: #c9cace;
-	margin-bottom: 15px;
-}
-
-.foot-nav-item__link{
-	color: #898d97;
-}
-
-.foot-nav-item__link:hover{
-	color: #898d97;
-	border-bottom: 1px solid #898d97;
-}
-
 /* ------ Footer ------ */
 
 .footer{
@@ -444,67 +423,24 @@ color: #081d42;
   color: #aaabae;
   font-size: 12px;
   font-family: 'Museo Sans Cyrl 100';
-  border-bottom: 19px solid #58647a;
+  padding: 15px 0;
 }
 
-.footer-content__block:first-child{
-	margin-top: 32px;
-	margin-bottom: 13px;
+.footer p, .footer a {
+	text-align: center;
+	margin-top: 10px;
 }
 
-.footer-content__w{
-		font-size: 15px;
-		border: 1px solid #aaabae;
-		width: 25px;
-		height: 25px;
-		box-sizing: border-box;
-		padding: 2px 5px;
-}
-
-.footer-content__element{
-	margin-left: 10px;
-	margin-top: -1px;
-}
-
-.footer-content__element span:first-child{
-  font-size: 10px;
-	display: block;
-}
-
-.footer-content__element span:last-child{
-	text-transform: uppercase;
-	font-size: 12px;
-	display: block;
-}
-
-.footer-privacy{
-	font-size: 12.08px;
-}
-
-.footer-privacy p{
-	margin-bottom: -3px;
-}
-
-.footer-privacy__bold{
-  font-family: 'Museo Sans Cyrl 700';
-}
-
-.footer-privacy__link{
+.footer-link{
 	color: #aaabae;
-	border-bottom: 1px solid #aaabae;
+	display: block;
+	text-decoration: none;
+	font-size: 18px;
 }
 
-.footer-privacy__link:hover{
+.footer-link:hover{
 	color: #aaabae;
-	border-bottom: none;
-}
-
-.footer .tel-btn{
-	margin: 67px 0 0;
-}
-
-.footer .logo-link img{
-	margin-top: 50px;
+	text-decoration: underline;
 }
 
 /* ________________________________________ */
@@ -1220,4 +1156,3 @@ color: #081d42;
 	margin-bottom: 0;
 	border-bottom: none;
 }
-

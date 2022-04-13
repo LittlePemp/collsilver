@@ -12,46 +12,11 @@ $(function(){
 		$('.hamburger').toggleClass('white');
 	});
 
-    //Modal window SEND_MSG
-	$('#msgbtn').click(function(e){
-		e.preventDefault();
-		$('#sendMsgModal').arcticmodal();
-	});
-	$('#answer').click(function(e){
-		e.preventDefault();
-		$('#sendMsgModal').arcticmodal();
-	});
-
 	//Modal window PHONE
-	$('#tel-btn').click(function(e){
+	$('#order-btn').click(function(e){
 		e.preventDefault();
-		$('#exampleModal').arcticmodal();
+		$('#order-modal').arcticmodal();
 	});
-	$('.consult__btn').click(function(e){
-		e.preventDefault();
-		$('#exampleModal').arcticmodal();
-	});
-
-    //Modal window AUTHORIZE
-	$('#authorization').click(function(e){
-		e.preventDefault();
-		$('#authorizeModal').arcticmodal();
-	});
-
-    //Modal window REGISTRATION
-	$('#registration').click(function(e){
-		e.preventDefault();
-		$('#registrationModal').arcticmodal();
-	});
-
-    //Slider
-    $('.services-slider').slick({
-        dots: true,
-        prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-        nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
-        autoplay: true,
-        autoplaySpeed: 2500
-    });
 });	
 
 var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
@@ -92,7 +57,7 @@ Array.from(inputs).forEach(input => {
 });
 
 // Order total
-var payment_amount = document.getElementById("payment_amount");
+var payment_amount = document.getElementById("id_order_count");
 payment_amount.oninput = function() {
 
     var amount = parseInt(payment_amount.value);
