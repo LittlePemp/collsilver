@@ -25,7 +25,7 @@ class OrderForm(forms.Form):
         widget=forms.TextInput(attrs={
             'class': 'order_count',
             'min': '0',
-            'max': '99',
+            'max': '3500',
             'type': 'number'})
     )
     address = forms.CharField(

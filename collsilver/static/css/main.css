@@ -463,6 +463,8 @@
 	margin-bottom: 30px;
 	padding-bottom: 16px;
     margin-bottom: 28px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .payment input {
@@ -504,5 +506,43 @@
 }
 
 .total {
-	margin-top: 20px;
+	margin-top: 0px;
+	width: 178px;
+}
+
+.price {
+	font-size: 18px;
+}
+
+
+
+/* Price section */
+
+.description-price {
+	display: flex;
+	align-items: center;
+}
+
+.desc-order-btn {
+	background: #23A8F2!important;
+	color: #fff!important;
+	transition: .2s;
+}
+
+.desc-order-btn:hover, .desc-order-btn:active, .desc-order-btn:focus{
+	box-shadow: 0 0 5px 5px rgba(35,168,242,.4)!important;
+}
+
+.old-price {
+	font-size: 16px;
+	text-decoration: line-through;
+	text-decoration-color: red;
+	margin-right: 10px;
+}
+
+.new-price {
+	font-size: 22px;
+	font-weight: bold;
+	color: red;
+	margin-right: 20px;
 }

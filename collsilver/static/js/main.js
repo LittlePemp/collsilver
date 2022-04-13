@@ -17,6 +17,10 @@ $(function(){
 		e.preventDefault();
 		$('#order-modal').arcticmodal();
 	});
+	$('#desc-order-btn').click(function(e){
+		e.preventDefault();
+		$('#order-modal').arcticmodal();
+	});
 });	
 
 var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
@@ -47,7 +51,7 @@ for (var i = 0; i < linkNav.length; i++) {
 
 // Border for input
 const MIN_INPUT_COUNTER = 0;
-const MAX_INPUT_COUNTER = 99;
+const MAX_INPUT_COUNTER = 3500;
 const CURRENT_COST = 225;
 
 const inputs = document.querySelectorAll('input[type=number]');
