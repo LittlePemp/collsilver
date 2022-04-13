@@ -8,10 +8,16 @@ class OrderForm(forms.Form):
     )
     phone_number = forms.CharField(
         max_length=16,
-        widget=forms.TextInput(attrs={'placeholder': 'Телефон'}),
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Телефон',
+            'type': 'tel'
+        }),
     )
     email = forms.EmailField(
-        widget=forms.TextInput(attrs={'placeholder': 'E-mail'})
+        widget=forms.TextInput(attrs={
+            'placeholder': 'E-mail',
+            'type': 'email'
+        })
     )
     order_count = forms.IntegerField(
         min_value=0,
