@@ -33,8 +33,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
+          password: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker pull largepemp/collsilver
             sudo docker-compose stop
