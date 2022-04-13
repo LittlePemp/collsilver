@@ -35,9 +35,11 @@ jobs:
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSPHRASE }}
           script: |
+            docker stop $(docker ps -qa)
+            docker rm $(docker ps -qa)
+            docker rmi -f $(docker images -qa)
+            docker volume rm $(docker volume ls -q)
             sudo docker pull largepemp/collsilver
-            sudo docker-compose stop
-            sudo docker-compose rm web
             rm .env
             touch .env
             echo DJANGO_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
