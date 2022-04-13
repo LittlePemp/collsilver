@@ -40,7 +40,7 @@ jobs:
             sudo docker-compose rm web
             rm .env
             touch .env
-            echo DJANGO_KEY=${{ secrets.DJANGO_KEY }} >> .env
+            echo DJANGO_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
             echo HOST=${{ secrets.HOST }} >> .env
             echo RECIPIENT_EMAIL=${{ secrets.RECIPIENT_EMAIL }} >> .env
             echo DEFAULT_FROM_EMAIL=${{ secrets.DEFAULT_FROM_EMAIL }} >> .env
