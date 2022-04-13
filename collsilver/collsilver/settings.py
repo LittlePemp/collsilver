@@ -6,9 +6,9 @@ import os
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = get_random_secret_key()
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = True
-ALLOWED_HOSTS = [os.getenv('DJANGO_SECRET_KEY')]
+ALLOWED_HOSTS = [os.getenv('HOST')]
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
