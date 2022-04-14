@@ -18,12 +18,19 @@ def index(request):
             comment = form.cleaned_data['comment']
 
             try:
-                send_mail(
+                mail = send_mail(
                     'Коллоидное серебро',
                     f'{username} из {address} // {comment}',
-                    settings.DEFAULT_FROM_EMAIL,
-                    settings.RECIPIENTS_EMAIL,
+                    settings.EMAIL_HOST_USER,
+                    [settings.EMAIL_RECIPIENT],
+                    fail_silently = False,
                 )
+                if mail:
+                    return HttpResponse(
+                        'Сообщение успешно отправлено. Спасибо а заявку!')
+                else:
+                    return HttpResponse(
+                        'Извините! Что-то пошло не так...')
             except Exception as error:
                 return HttpResponse(f'E-mail error - {error}')
 
