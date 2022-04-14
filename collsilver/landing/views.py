@@ -10,6 +10,9 @@ def index(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
+            user = get_client_ip(request)
+            return HttpResponse(
+                        f'{user}')
             username = form.cleaned_data['username']
             phone_number = form.cleaned_data['phone_number']
             email = form.cleaned_data['email']
@@ -38,3 +41,12 @@ def index(request):
     else:
         form = OrderForm()
     return render(request, 'index.html', context={'form': form})
+
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
