@@ -42,7 +42,7 @@ jobs:
             sudo docker pull largepemp/collsilver
             rm .env
             touch .env
-            echo DJANGO_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
+            echo DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }} >> .env
             echo HOST=${{ secrets.HOST }} >> .env} >> .env
             echo EMAIL_HOST=${{ secrets.EMAIL_HOST }} >> .env} >> .env
             echo EMAIL_HOST_USER=${{ secrets.EMAIL_HOST_USER }} >> .env} >> .env
@@ -51,4 +51,3 @@ jobs:
             cd infra/
             sudo docker-compose -f docker-compose.yml up -d
             sudo docker exec infra_web_1 python3 manage.py collectstatic --no-input
-

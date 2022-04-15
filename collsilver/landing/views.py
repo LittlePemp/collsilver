@@ -13,7 +13,7 @@ def index(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
-            user_ip = request.META['HTTP_X_REAL_IP']  # IP юзера, check nginx
+            user_ip = request.META['HTTP_X_REAL_IP']
             if spams.get(user_ip):
                 waiting_time = dt.now() - spams.get(user_ip)
                 if waiting_time.seconds < 300:
@@ -23,7 +23,6 @@ def index(request):
                         ' повторного заполнения.')
                 else:
                     spams.pop(user_ip, None)
-
 
             username = form.cleaned_data['username']
             phone_number = form.cleaned_data['phone_number']
