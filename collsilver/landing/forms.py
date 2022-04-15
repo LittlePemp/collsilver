@@ -20,11 +20,11 @@ class OrderForm(forms.Form):
         })
     )
     order_count = forms.IntegerField(
-        min_value=0,
+        min_value=1,
         initial=0,
         widget=forms.TextInput(attrs={
             'class': 'order_count',
-            'min': '0',
+            'min': '1',
             'max': '3500',
             'type': 'number'})
     )

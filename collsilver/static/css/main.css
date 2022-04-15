@@ -523,15 +523,46 @@
 
 /* Price section */
 
-.description-price {
+.description-price {    
+    align-items: center;
+    border: 2px solid #23A8F2;
+    border-top: 19px solid #23A8F2;
+    padding: 20px;
+    border-radius: 9px 9px 0 0;
+}
+
+.price-info, .price-wrapper {
 	display: flex;
-	align-items: center;
+    align-items: center;
+}
+
+.price-info {
+	justify-content: space-between;
+}
+
+.price-additional-info {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.discount-wrapper {
+	display: flex;
+    align-items: center;
+	width: 410px;
+}
+
+.discount-date {
+	font-size: 24px;
 }
 
 .desc-order-btn {
 	background: #23A8F2!important;
 	color: #fff!important;
 	transition: .2s;
+	font-size: 22px;
+	margin: 0 auto;
+	width: 240px;
+	margin-top: 20px;
 }
 
 .desc-order-btn:hover, .desc-order-btn:active, .desc-order-btn:focus{
