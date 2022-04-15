@@ -1,13 +1,12 @@
 /* ------ First section ------ */
 
 .header{
-	padding: 0 0 148px;
-	background: #0e0f0f url(../img/header2.jpg) no-repeat fixed center center;
+	padding: 0;
 }
 
 .hat{
-	background: rgba(0,0,0,0);
-	padding: 17px 0 7px;
+	background: rgb(69 130 210);
+	padding: 17px 0;
 }
 
 .nav{
@@ -45,10 +44,12 @@
 	color: #46e6b0;
 }
 
-.offer{
+.offer-content-wrapper {
   color: #fff;
-  padding-top: 228px;
+  padding-top: 228px; 
+  padding-bottom: 228px;
   text-shadow: rgb(36, 35, 33) 1px 0 10px;
+  background: #0e0f0f url(../img/header2.jpg) no-repeat fixed center center;
 }
 
 .offer-content{

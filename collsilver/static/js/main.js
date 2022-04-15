@@ -21,6 +21,17 @@ $(function(){
 		e.preventDefault();
 		$('#order-modal').arcticmodal();
 	});
+
+    // slick slider
+    $(document).ready(function(){
+        $('.offer').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 6000
+        });
+    });
 });	
 
 var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
