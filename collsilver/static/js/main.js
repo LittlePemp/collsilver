@@ -34,7 +34,7 @@ $(function(){
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 3000,
+            autoplaySpeed: 5000,
             arrows: false
         });
     });
@@ -81,6 +81,8 @@ for (var i = 0; i < linkNav.length; i++) {
 const MIN_INPUT_COUNTER = 1;
 const MAX_INPUT_COUNTER = 3500;
 const CURRENT_COST = 225;
+const DELIVERY_PRICE = 300;
+const FREE_DELIVERY_BORDER = 2000;
 
 const inputs = document.querySelectorAll('input[type=number]');
 Array.from(inputs).forEach(input => {
@@ -94,10 +96,16 @@ Array.from(inputs).forEach(input => {
 // Order total
 var payment_amount = document.getElementById("id_order_count");
 payment_amount.onchange = function() {
-
     var amount = parseInt(payment_amount.value);
     var cost = CURRENT_COST;
     var total = cost * amount;
+    
+    var cost = CURRENT_COST;
+    var total = cost * count;
+    // Delivery
+    if (total < FREE_DELIVERY_BORDER) {
+        total = total + DELIVERY_PRICE;
+    }
     var total_output = document.getElementById("payment_total");
     total_output.innerHTML = total;
 }
@@ -105,7 +113,6 @@ payment_amount.onchange = function() {
 
 
 // Counter
-var counterDisplayElem = document.querySelector('.counter-display');
 var counterMinusElem = document.querySelector('.counter-minus');
 var counterPlusElem = document.querySelector('.counter-plus');
 var count = MIN_INPUT_COUNTER;
@@ -121,11 +128,14 @@ counterMinusElem.addEventListener("click",()=>{
 function updateDisplay(){
     if (count > MAX_INPUT_COUNTER) { count = MAX_INPUT_COUNTER }
     if (count < MIN_INPUT_COUNTER) { count = MIN_INPUT_COUNTER }
-    counterDisplayElem.innerHTML = count;
     payment_amount.value = count;
 
     var cost = CURRENT_COST;
     var total = cost * count;
+    // Delivery
+    if (total < FREE_DELIVERY_BORDER) {
+        total = total + DELIVERY_PRICE;
+    }
     var total_output = document.getElementById("payment_total");
     total_output.innerHTML = total;
 };
@@ -133,7 +143,7 @@ function updateDisplay(){
 
 
 // discount timer
-var countDownDate = new Date("May 31, 2022 12:00:00").getTime();
+var countDownDate = new Date("April 18, 2022 12:00:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {

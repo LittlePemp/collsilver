@@ -382,15 +382,17 @@
 					{{ form.comment }}
 
 					<!-- Количество - натуральное число -->
+					<div class="delivery-info">
+						<p class="delivery-price"><span style="font-weight:bold">Доставка: </span>300 руб.</p>
+					</div>
 					<div class="payment">
-
 						<div class="adaptive-wrapper">
 							<p class="price"><span style="font-weight:bold">Цена: </span>225 руб.</p>
 							
 							<div class="counter-wrapper d-flex">
 								<button type="button" class="counter-minus">-</button>
 								<div class="counter">{{ form.order_count }}</div>
-								<p class="counter-hide counter-display">0</p>
+								<!-- <p class="counter-hide counter-display">0</p> -->
 								<button type="button" class="counter-plus">+</button>
 							</div>
 						</div>
