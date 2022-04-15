@@ -11,6 +11,11 @@ $(function(){
 		$('.nav__list').toggleClass('nav__list_opened');
 		$('.hamburger').toggleClass('white');
 	});
+	$('.nav__link').click(function(){
+		$('.menu-collapse').toggleClass('d-none').css('order', '1');
+		$('.nav__list').removeClass('nav__list_opened');
+		$('.hamburger').removeClass('white');
+	});
 
 	//Modal window PHONE
 	$('#order-btn').click(function(e){
