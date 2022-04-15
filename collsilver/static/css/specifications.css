@@ -1,0 +1,129 @@
+/* ------ S.P.E.C.I.A.L. ------ */
+
+body{
+	font-family: 'Museo Sans Cyrl 300';
+	color: #404048;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}
+
+div, p, form, input, a, span, button, textarea{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+a, button{
+	cursor: pointer;
+}
+
+p{
+	line-height: 1.5em;
+	font-size: 18px;
+}
+
+.logo, .power-example, .ser-img{
+	max-width: 100%
+}
+
+ul, li{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+	padding: 0;
+	margin: 0;
+	text-transform: none;
+}
+
+h1{
+	font-size: 58px;
+	font-family: 'Museo Sans Cyrl 700';
+}
+
+h2{
+	font-size: 35px;
+	font-family: 'Museo Sans Cyrl 700';
+}
+
+h3{
+	font-size: 30px;
+	font-family: 'Museo Sans Cyrl 100';
+}
+
+h4{
+	font-size: 25px;
+  font-family: 'Museo Sans Cyrl 700';
+}
+
+h5{
+	font-size: 22px;
+  font-family: 'Museo Sans Cyrl 700';
+}
+
+h6{
+	font-size: 19px;
+	font-family: 'Museo Sans Cyrl 700';
+}
+
+a, a:hover, a:active, a:focus{
+	text-decoration: none;
+	outline: none;
+}
+
+input, input:hover, input:focus, input:active,
+button, button:hover, button:focus, button:active{
+	outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button{
+	background: transparent;
+	border: none;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+.btn{
+	color: #0073C3;
+	display: block;
+    background-color: #ECECEC;
+	text-align: center;
+	box-sizing: border-box;
+	padding-bottom: 12px;
+	border-radius: 6px;
+}
+
+.btn:hover, .btn:active, .btn:focus{
+	color: #0073C3;
+	box-shadow: 0 -3px 0 0px #fafafa inset;
+}
+
+.red-font{
+	color: #b81c31;
+}
+
+.hamburger{
+	color: #fff;
+	margin-left: 15px;
+	font-size: 26px;
+	z-index: 1000;
+}

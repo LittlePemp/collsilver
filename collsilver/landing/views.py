@@ -11,14 +11,15 @@ spams = dict()
 
 def index(request):
     if request.method == 'POST':
+        print('\n\n\n\n\n', spams, '\n\n\n\n')
         form = OrderForm(request.POST)
         if form.is_valid():
-            user_ip = request.META['HTTP_X_REAL_IP']
+            user_ip = '127.0.0.1'
             if spams.get(user_ip):
                 waiting_time = dt.now() - spams.get(user_ip)
                 if waiting_time.seconds < 300:
                     return HttpResponse(
-                        'Вы уже отправляли заявку. '    
+                        'Вы уже отправляли заявку. '  
                         'Подожите 5 минут с момента успешного заполнения для'
                         ' повторного заполнения.')
                 else:
