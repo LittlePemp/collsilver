@@ -7,6 +7,19 @@
 .hat{
 	background: rgb(69 130 210);
 	padding: 17px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	transition: .3s ease;
+}
+
+.hat-scrolled {
+	background: rgba(69, 130, 210, .9);
+	padding: 12px 0;
+}
+
+.hat-scrolled .nav__link {
+	font-size: 18px;
 }
 
 .nav{

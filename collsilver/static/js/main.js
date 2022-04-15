@@ -34,10 +34,21 @@ $(function(){
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 6000,
+            autoplaySpeed: 3000,
             arrows: false
         });
     });
+
+    // hat while scrolling
+    $(window).scroll(function() { 
+        var scroll = $(window).scrollTop();
+        if (scroll > 630) {
+           $(".hat").addClass("hat-scrolled");
+        }
+        else {
+            $(".hat").removeClass("hat-scrolled");
+        }
+     });
 });	
 
 var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
