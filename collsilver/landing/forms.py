@@ -40,6 +40,7 @@ class OrderForm(forms.Form):
         widget=forms.TextInput(attrs={'placeholder': 'Адрес'}),
     )
     comment = forms.CharField(
+        required=False,
         max_length=255,
         widget=forms.Textarea(attrs={'placeholder': 'Комментарий'}),
     )

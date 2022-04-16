@@ -12,11 +12,18 @@ spams = dict()
 
 
 def index(request):
-    msg_log_level = messages.INFO
-    msg = 'Заполните форму и мы в скором времени свяжемся с Вами!'
+    open_form = 'clear'  # For NOT open after POST
+    user_ip = request.META.get('HTTP_X_REAL_IP')
+    if user_ip not in spams:
+        msg_log_level = messages.INFO
+        msg = 'Заполните форму и мы в скором времени свяжемся с Вами!'
+    else:
+        msg_log_level = messages.ERROR
+        msg = 'Спасибо! Мы в скором времени свяжемся с Вами!'
+
     if request.method == 'POST':
+        open_form = 'open_form_after_post'
         form = OrderForm(request.POST)
-        user_ip = request.META.get('HTTP_X_REAL_IP')
 
         if form.is_valid():
             # Spam check
@@ -28,7 +35,9 @@ def index(request):
                     'Подождите, пожалуйста, '
                     '5 минут с момента успешной отправки')
                 messages.add_message(request, messages.ERROR, msg)
-                return render(request, 'index.html', context={'form': form})
+                return render(request, 'index.html', context={
+                    'form': form,
+                    'open_form': open_form})
 
             # Take FORM attributes
             username = form.cleaned_data['username']
@@ -60,7 +69,9 @@ def index(request):
     else:
         form = OrderForm()
     messages.add_message(request, msg_log_level, msg)
-    return render(request, 'index.html', context={'form': form})
+    return render(request, 'index.html', context={
+        'form': form,
+        'open_form': open_form})
 
 
 def clean_spams(spams):
