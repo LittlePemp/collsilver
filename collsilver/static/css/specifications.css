@@ -77,8 +77,23 @@ a, a:hover, a:active, a:focus{
 }
 
 input, input:hover, input:focus, input:active,
-button, button:hover, button:focus, button:active{
+button, button:hover, button:focus, button:active, textarea{
 	outline: none;
+}
+
+textarea {
+	resize: none;
+}
+
+textarea::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5; 
+}
+
+textarea::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+	background-color: #4285F4; 
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -126,4 +141,8 @@ button:hover{
 	margin-left: 15px;
 	font-size: 26px;
 	z-index: 1000;
+}
+
+.show {
+	display: block!important;
 }

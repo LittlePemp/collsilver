@@ -25,7 +25,8 @@ class OrderForm(forms.Form):
     )
     order_count = forms.IntegerField(
         required=True,
-        min_value=0,
+        min_value=1,
+        max_value=3500,
         initial=0,
         widget=forms.TextInput(attrs={
             'class': 'order_count',
@@ -37,7 +38,10 @@ class OrderForm(forms.Form):
     address = forms.CharField(
         required=True,
         max_length=255,
-        widget=forms.TextInput(attrs={'placeholder': 'Адрес'}),
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Адрес',
+            'autocomplete': 'off',
+        }),
     )
     comment = forms.CharField(
         required=False,

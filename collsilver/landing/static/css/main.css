@@ -444,7 +444,7 @@
 	margin-bottom: 33px;
 }
 
-.box-modal input{
+.box-modal input, .box-modal textarea{
 	width: 100%;
 	border: transparent;
 	border-bottom: 1px solid #757888;
@@ -452,6 +452,13 @@
 	padding-bottom: 16px;
 	margin-bottom: 28px;
 	font-size: 16px;
+}
+
+.box-modal textarea {
+    line-height: 1.5em;
+    height: 100px;
+    border: 1px solid;
+    border-radius: 13px;
 }
 
 .box-modal-btn{
@@ -549,6 +556,8 @@
     border-top: 19px solid #23A8F2;
     padding: 20px;
     border-radius: 9px 9px 0 0;
+    width: 720px;
+    margin: 50px auto 0;
 }
 
 .price-info, .price-wrapper {
@@ -601,4 +610,42 @@
 	font-weight: bold;
 	color: red;
 	margin-right: 20px;
+}
+
+.box-modal-messages {
+	margin-bottom: 19px;
+}
+
+/* Dropdown list */  
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #2980B9;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #f1f1f1;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	width: 396px;    
+	margin: -42px 0 0 -198px;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown a:hover {
+	background-color: #ddd;
 }

@@ -159,28 +159,30 @@
 						<p class="description-item__text">
 							На этом сайте представлен оригинальный препарат КОЛЛОИДНОЕ СЕРЕБРО (Производитель Курортмедмедсервис), который вы можете купить по цене производителя с доставкой по Москве и России или оформить самовывоз.
 						</p>
-						<div class="description-price">
-							<div class="price-info">
-								<div class="price-wrapper">
-									<p class="description-text">Цена: &nbsp;</p>
-									<p class="old-price">325 руб.</p>
-									<p class="new-price">225 руб.</p>
-								</div>
-								<div class="discount-wrapper">
-									<p class="discount-title">Скидка действует еще: &nbsp; </p>
-									<p class="description-text discount-date" id="discount-date"></p>
-								</div>
-							</div>
-							<div class="price-additional-info">
-								<p>Доставка: 300 рублей</p>
-								<p>При заказе от 2000 рублей - бесплатно!</p>
-							</div>
-							<button type="button" class="order-btn desc-order-btn btn order-btn-head" id="desc-order-btn">
-								<span>Заказать на сайте</span>
-							</button>
-						</div>
 	 				</div>
 	 			</div>
+				 <div class="col-md-12 col-lg-12">
+					<div class="description-price">
+						<div class="price-info">
+							<div class="price-wrapper">
+								<p class="description-text">Цена: &nbsp;</p>
+								<p class="old-price">325 руб.</p>
+								<p class="new-price">225 руб.</p>
+							</div>
+							<div class="discount-wrapper">
+								<p class="discount-title">Скидка действует еще: &nbsp; </p>
+								<p class="description-text discount-date" id="discount-date"></p>
+							</div>
+						</div>
+						<div class="price-additional-info">
+							<p>Доставка: 300 рублей</p>
+							<p>При заказе от 2000 рублей - бесплатно!</p>
+						</div>
+						<button type="button" class="order-btn desc-order-btn btn order-btn-head" id="desc-order-btn">
+							<span>Заказать на сайте</span>
+						</button>
+					</div>
+				 </div>
 	 		</div>
 	 	</div>
 	 </section>
@@ -371,7 +373,7 @@
 					Заполните форму для заказа
 				</p>
 				{% if messages %}
-				<ul class="messages">
+				<ul class="box-modal-messages">
 				    {% for message in messages %}
 				    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
 				    {% endfor %}
@@ -386,6 +388,7 @@
 					{{ form.phone_number }}
 					
 					{{ form.address }}
+					<div class="dropdown" id="result-dadata"></div>
 					{{ form.comment }}
 
 					<!-- Количество - натуральное число -->
@@ -412,6 +415,14 @@
 			</div>
 		</div>
 	</div>
+	<div style="display: none;">
+		<div class="box-modal" id="succes-post-modal">
+			<p class="post-succes">Слон</p>
+		</div>
+	</div>
+
+
+	<div class="{{ open_form }}" id="{{ open_form }}"></div>
 
 	<!-- JS -->
 	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
@@ -421,6 +432,5 @@
 	<script src="{% static 'js/jquery.arcticmodal-0.3.min.js' %}"></script>
 	<script src="{% static 'js/parallax.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
-	<div class="{{ open_form }}" id="{{ open_form }}"></div>
 </body>
 </html>

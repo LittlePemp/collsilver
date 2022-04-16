@@ -1,4 +1,12 @@
 $(function(){
+    // on start up
+    $(document).ready(function(){
+        // Post checking
+        if ($("#open_form_after_post").length > 0) {
+            $('#succes-post-modal').arcticmodal();
+        }
+    });
+
     //Preloader
      var $preloader = $('#page-preloader'),
         $spinner   = $preloader.find('.spinner');
@@ -17,7 +25,7 @@ $(function(){
         $('.hamburger').removeClass('white');
     });
 
-    //Modal window PHONE
+    //Modal window DELIVERY
     $('#order-btn').click(function(e){
         e.preventDefault();
         $('#order-modal').arcticmodal();
@@ -49,8 +57,53 @@ $(function(){
             $(".hat").removeClass("hat-scrolled");
         }
      });
+
+    var token = "68bfce99e0f09fa7334daa046f92c090f8f5a900";
+    $('#id_address').keyup(function(e){
+        var promise = suggest(e.target.value);
+        promise
+            .done(function(response) {
+                var MAX = 5;
+                var res_html = "<div id=\"myDropdown\" class=\"dropdown-content\">";
+                for (var key in response) {
+                    var value = response[key];
+                    for (var i = 0; i < MAX; ++i) {
+                        res_html += ("<a href=\"#\">" + (JSON.stringify(value[i].unrestricted_value).replace(/^.|.$/g,"")) + "</a>");
+                    }
+                }
+                res_html += "</div>";
+                $("#result-dadata").html(res_html);           
+
+                // show dropdown list
+                document.getElementById("myDropdown")
+                    .classList.toggle("show");
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+                console.log(errorThrown);
+            });
+    });
+
+    function suggest(query) {
+        var serviceUrl = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address";
+        var request = {
+            "query": query
+        };
+        var params = {
+            type: "POST",
+            contentType: "application/json",
+            headers: {
+            "Authorization": "Token " + token
+            },
+            data: JSON.stringify(request)
+        }
+        return $.ajax(serviceUrl, params);
+    }
 }); 
 
+
+
+// Scroll system
 var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
     V = 0.15;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
 for (var i = 0; i < linkNav.length; i++) {
@@ -144,29 +197,45 @@ function updateDisplay(){
 
 // discount timer
 var countDownDate = new Date("April 18, 2022 12:00:00").getTime();
-
 // Update the count down every 1 second
 var x = setInterval(function() {
-
   // Get todays date and time
   var now = new Date().getTime();
-
   // Find the distance between now an the count down date
   var distance = countDownDate - now;
-
   // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
   // Display the result in the element with id="discount-date"
-  document.getElementById("discount-date").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
+  document.getElementById("discount-date").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("discount-date").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+
+// Dropdown list TODO
+const address_list = document.querySelectorAll('.dropdown-content a');
+Array.from(address_list).forEach(address_list => {
+    address_list.addEventListener('address_list', (e) => {
+        
+    })
+});

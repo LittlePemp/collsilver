@@ -38,6 +38,9 @@
 		margin-top: 60px;
 		margin-bottom: 0;
 	}
+	.order-btn {
+		order: 2;
+	}
 }
 
 /* 768-992px */
@@ -119,6 +122,9 @@
 	}
 	.offer-content {
 		width: auto;
+	}
+	.order-btn {
+		order: 0;
 	}
 }
 
@@ -214,6 +220,13 @@
 	}
 	.counter-plus, .counter-minus {
 		font-size: 32px;
+	}
+	.description-price {
+		width: 500px;
+	}
+	.price-info {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }
 
@@ -326,6 +339,15 @@
 	.counter-plus, .counter-minus {
 		font-size: 32px;
 	}
+	.description-price {
+		width: auto;
+	}
+	.discount-wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+		margin: 5px 0;
+		width: auto;
+	}
 }
 
 /* 1-479 */
@@ -365,5 +387,8 @@
 	}
 	.box-modal-btn span{
 		display: none;
+	}
+	.description-price {
+		width: auto;
 	}
 }
