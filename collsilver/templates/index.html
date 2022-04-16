@@ -370,6 +370,13 @@
 				<p class="box-modal__text">
 					Заполните форму для заказа
 				</p>
+				{% if messages %}
+				<ul class="messages">
+				    {% for message in messages %}
+				    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				    {% endfor %}
+				</ul>
+				{% endif %}
 				<form action="#" class="form" method="POST">
 					
 					{% csrf_token %}
