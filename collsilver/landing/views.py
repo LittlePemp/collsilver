@@ -12,6 +12,8 @@ spams = dict()
 
 
 def index(request):
+    msg_log_level = messages.INFO
+    msg = 'Заполните форму и мы в скором времени свяжемся с Вами!'
     if request.method == 'POST':
         form = OrderForm(request.POST)
         user_ip = request.META.get('HTTP_X_REAL_IP')
@@ -20,7 +22,12 @@ def index(request):
             # Spam check
             clean_spams(spams)
             if user_ip in spams:
-                messages.add_message(request, messages.ERROR, 'Подождите...')
+                msg_log_level = messages.WARNING
+                msg = (
+                    'Вы уже отправляли данную форму... '
+                    'Подождите, пожалуйста, '
+                    '5 минут с момента успешной отправки')
+                messages.add_message(request, messages.ERROR, msg)
                 return render(request, 'index.html', context={'form': form})
 
             # Take FORM attributes
@@ -44,11 +51,15 @@ def index(request):
             if mail:
                 spams[user_ip] = dt.now()
                 form = OrderForm()
-                messages.add_message(request, messages.INFO, 'Спасибо!')
+                msg = 'Спасибо! Мы в скором времени свяжемся с Вами!'
             else:
-                messages.add_message(request, messages.ERROR, 'Почта упала')
+                msg_log_level = messages.WARNING
+                msg = (
+                    'Ой... Пошло что-то не так... '
+                    'Свяжите с нами напрямую и сообщите об ошибке')
     else:
         form = OrderForm()
+    messages.add_message(request, msg_log_level, msg)
     return render(request, 'index.html', context={'form': form})
 
 
