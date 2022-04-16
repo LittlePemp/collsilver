@@ -41,6 +41,6 @@ class OrderForm(forms.Form):
     )
     comment = forms.CharField(
         required=False,
-        max_length=255,
+        max_length=1023,
         widget=forms.Textarea(attrs={'placeholder': 'Комментарий'}),
     )
