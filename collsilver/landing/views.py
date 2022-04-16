@@ -10,11 +10,11 @@ from .forms import OrderForm
 spams = dict()
 
 def index(request):
+    user_ip = request.META['REMOTE_ADDR']
+    return HttpResponse(f'{user_ip}')
     if request.method == 'POST':
-        print('\n\n\n\n\n', spams, '\n\n\n\n')
         form = OrderForm(request.POST)
         if form.is_valid():
-            user_ip = '127.0.0.1'
             if spams.get(user_ip):
                 waiting_time = dt.now() - spams.get(user_ip)
                 if waiting_time.seconds < 300:
