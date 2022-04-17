@@ -649,3 +649,68 @@
 .dropdown a:hover {
 	background-color: #ddd;
 }
+
+
+/* succes post */
+
+.succes-post-modal {
+    width: 200px!important;
+	padding: 0 10px 13px;
+}
+.loader {
+	position: relative;
+	margin: 0px auto;
+	width: 100px;
+	height:100px;
+  }
+  .circular{animation:rotate 2s linear forwards ;width:100px;height:100px;position:relative}
+  .path{stroke:#007aff; stroke-dasharray: 1,200;
+	stroke-dashoffset: 0;
+	animation: 
+	 dash 1.5s ease-in-out forwards,
+	 color 6s ease-in-out infinite
+	;
+	stroke-linecap: round;}
+	@keyframes dash{
+   0%{
+	stroke-dasharray: 1,200;
+	stroke-dashoffset: 0;
+   }
+  
+   100%{
+	stroke-dasharray: 150,200;
+	stroke-dashoffset: 10;
+   }
+  
+  }
+  @keyframes color{
+	100%, 0%{
+		stroke: #789642;
+	}
+  }
+  @keyframes rotate{
+	  100%{transform:rotate(360deg)}
+	  }
+	  
+  .checkmark__check {
+	  transform-origin: 50% 50%;
+	  stroke-dasharray: 48;
+	  stroke-dashoffset: 48;
+	  
+	   animation: stroke 0.5s  cubic-bezier(0.65, 0, 0.45, 1) 1.5s forwards, color 6s linear infinite;}
+	  @keyframes stroke {
+	100% {
+	  stroke-dashoffset: 0;
+	}
+  }
+  .suc{stroke:#007aff;
+	  stroke-width:2;
+	  position:absolute;top:30px;left:30px;
+	  width:40px;height:40px;}
+
+.error {    
+	color: rgb(14 215 14);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.3em;
+}

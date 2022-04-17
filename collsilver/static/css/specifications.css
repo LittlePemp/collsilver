@@ -146,3 +146,8 @@ button:hover{
 .show {
 	display: block!important;
 }
+
+.line-through-red {
+    text-decoration: line-through;
+    text-decoration-color: red;
+}

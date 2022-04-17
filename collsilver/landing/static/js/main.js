@@ -5,6 +5,12 @@ $(function(){
         if ($("#open_form_after_post").length > 0) {
             $('#succes-post-modal').arcticmodal();
         }
+
+        // Browser for input autocomplete off
+        var ua = navigator.userAgent;    
+        if (ua.search(/YaBrowser/) > 0) {
+            $('#id_address').attr('autocomplete', 'autocomplete-off');
+        }
     });
 
     //Preloader
@@ -99,6 +105,14 @@ $(function(){
         }
         return $.ajax(serviceUrl, params);
     }
+
+
+    // Dropdown list click
+    $('#result-dadata').click(function (event) {
+        var html_var = event.target;
+        var html_content = html_var.innerHTML;
+        $('#id_address').val(html_content);
+    });
 }); 
 
 
@@ -186,8 +200,13 @@ function updateDisplay(){
     var cost = CURRENT_COST;
     var total = cost * count;
     // Delivery
+    var html_deliver_price = document.querySelector('.delivery-price');
     if (total < FREE_DELIVERY_BORDER) {
         total = total + DELIVERY_PRICE;
+        html_deliver_price.classList.remove('line-through-red');
+    }
+    else {
+        html_deliver_price.classList.add('line-through-red');
     }
     var total_output = document.getElementById("payment_total");
     total_output.innerHTML = total;
@@ -230,12 +249,3 @@ window.onclick = function(event) {
         }
     }
 }
-
-
-// Dropdown list TODO
-const address_list = document.querySelectorAll('.dropdown-content a');
-Array.from(address_list).forEach(address_list => {
-    address_list.addEventListener('address_list', (e) => {
-        
-    })
-});
