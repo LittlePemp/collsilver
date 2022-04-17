@@ -2,9 +2,13 @@ $(function(){
     // on start up
     $(document).ready(function(){
         // Post checking
-        if ($("#open_form_after_post").length > 0) {
+        if ($(".success")[0]) {
             $('#succes-post-modal').arcticmodal();
         }
+        if ($(".error")[0]) {
+            $('#succes-post-modal').arcticmodal();
+        }
+
 
         // Browser for input autocomplete off
         var ua = navigator.userAgent;    
@@ -26,7 +30,7 @@ $(function(){
         $('.hamburger').toggleClass('white');
     });
     $('.nav__link').click(function(){
-        $('.menu-collapse').toggleClass('d-none').css('order', '1');
+        $('.menu-collapse').toggleClass('d-none').css('order', '0');
         $('.nav__list').removeClass('nav__list_opened');
         $('.hamburger').removeClass('white');
     });
@@ -34,12 +38,20 @@ $(function(){
     //Modal window DELIVERY
     $('#order-btn').click(function(e){
         e.preventDefault();
-        $('#order-modal').arcticmodal();
+        $('#order-modal').arcticmodal({
+            closeOnOverlayClick: false
+        });
     });
     $('#desc-order-btn').click(function(e){
         e.preventDefault();
-        $('#order-modal').arcticmodal();
+        $('#order-modal').arcticmodal({
+            closeOnOverlayClick: false
+        });
     });
+    $('.close-modal-icon').click(function(e){
+        $('#order-modal').arcticmodal('close');
+    });
+
 
     // slick slider
     $(document).ready(function(){
@@ -166,12 +178,14 @@ payment_amount.onchange = function() {
     var amount = parseInt(payment_amount.value);
     var cost = CURRENT_COST;
     var total = cost * amount;
-    
-    var cost = CURRENT_COST;
-    var total = cost * count;
     // Delivery
+    var html_deliver_price = document.querySelector('.delivery-price');
     if (total < FREE_DELIVERY_BORDER) {
         total = total + DELIVERY_PRICE;
+        html_deliver_price.classList.remove('line-through-red');
+    }
+    else {
+        html_deliver_price.classList.add('line-through-red');
     }
     var total_output = document.getElementById("payment_total");
     total_output.innerHTML = total;
@@ -185,10 +199,12 @@ var counterPlusElem = document.querySelector('.counter-plus');
 var count = MIN_INPUT_COUNTER;
 updateDisplay();
 counterPlusElem.addEventListener("click",()=>{
+    count = document.getElementById("id_order_count").value;
     count++;
     updateDisplay();
 });
 counterMinusElem.addEventListener("click",()=>{
+    count = document.getElementById("id_order_count").value;
     count--;
     updateDisplay();
 });
@@ -215,7 +231,7 @@ function updateDisplay(){
 
 
 // discount timer
-var countDownDate = new Date("April 18, 2022 12:00:00").getTime();
+var countDownDate = new Date("April 27, 2022 12:00:00").getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
   // Get todays date and time

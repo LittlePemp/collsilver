@@ -59,7 +59,7 @@ MEDIA_URL = '/media/'
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    SPAM_TIME = 20
+    SPAM_TIME = 5
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     SPAM_TIME = 300
