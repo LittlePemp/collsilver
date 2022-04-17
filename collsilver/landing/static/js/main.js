@@ -215,7 +215,7 @@ function updateDisplay(){
 
 
 // discount timer
-var countDownDate = new Date("April 18, 2022 12:00:00").getTime();
+var countDownDate = new Date("April 27, 2022 12:00:00").getTime();
 // Update the count down every 1 second
 var x = setInterval(function() {
   // Get todays date and time
