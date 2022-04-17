@@ -6,7 +6,7 @@ $(function(){
             $('#succes-post-modal').arcticmodal();
         }
         if ($(".error")[0]) {
-            $('#succes-post-modal').arcticmodal();
+            $('#error-post-modal').arcticmodal();
         }
 
 
