@@ -49,7 +49,6 @@ def index(request):
                 mail.send()
 
                 spams[user_ip] = dt.now()
-                form = OrderForm()
                 msg_log_level = messages.SUCCESS
                 msg = 'Спасибо! Мы в скором времени свяжемся с Вами!'
 
