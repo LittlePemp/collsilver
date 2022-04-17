@@ -5,6 +5,12 @@ $(function(){
         if ($("#open_form_after_post").length > 0) {
             $('#succes-post-modal').arcticmodal();
         }
+
+        // Browser for input autocomplete off
+        var ua = navigator.userAgent;    
+        if (ua.search(/YaBrowser/) > 0) {
+            $('#id_address').attr('autocomplete', 'autocomplete-off');
+        }
     });
 
     //Preloader
