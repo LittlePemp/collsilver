@@ -57,9 +57,15 @@ def index(request):
                 msg = (
                     'Ой... Пошло что-то не так... '
                     'Свяжите с нами напрямую и сообщите об ошибке')
+
+        else:
+            msg_log_level = messages.ERROR
+            msg = 'Ошибка заполнения формы. Обновите страницу и попробуйте еще.'            
+
+        messages.add_message(request, msg_log_level, msg)
+
     else:
         form = OrderForm()
-    messages.add_message(request, msg_log_level, msg)
     return render(request, 'index.html', context={'form': form})
 
 
