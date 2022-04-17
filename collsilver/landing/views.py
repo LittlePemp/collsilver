@@ -16,12 +16,8 @@ spams = dict()
 def index(request):
     open_form = 'clear'  # For NOT open after POST in front
     user_ip = request.META.get('HTTP_X_REAL_IP')
-    if user_ip not in spams:
-        msg_log_level = messages.INFO
-        msg = 'Заполните форму и мы в скором времени свяжемся с Вами!'
-    else:
-        msg_log_level = messages.ERROR
-        msg = 'Спасибо! Мы в скором времени свяжемся с Вами!'
+    msg_log_level = messages.WARNING
+    msg = 'GET request'
 
     if request.method == 'POST':
         open_form = 'open_form_after_post'  # For OPEN after POST in front
@@ -31,15 +27,13 @@ def index(request):
             # Spam check
             clean_spams(spams)
             if user_ip in spams:
-                msg_log_level = messages.WARNING
+                msg_log_level = messages.ERROR
                 msg = (
                     'Вы уже отправляли данную форму... '
                     'Подождите, пожалуйста, '
                     '5 минут с момента успешной отправки')
                 messages.add_message(request, messages.ERROR, msg)
-                return render(request, 'index.html', context={
-                    'form': form,
-                    'open_form': open_form})
+                return render(request, 'index.html', context={'form': form})
 
             html_content = get_html_content(form)
 
@@ -56,19 +50,18 @@ def index(request):
 
                 spams[user_ip] = dt.now()
                 form = OrderForm()
+                msg_log_level = messages.SUCCESS
                 msg = 'Спасибо! Мы в скором времени свяжемся с Вами!'
 
             except TypeError:
-                msg_log_level = messages.WARNING
+                msg_log_level = messages.ERROR
                 msg = (
                     'Ой... Пошло что-то не так... '
                     'Свяжите с нами напрямую и сообщите об ошибке')
     else:
         form = OrderForm()
     messages.add_message(request, msg_log_level, msg)
-    return render(request, 'index.html', context={
-        'form': form,
-        'open_form': open_form})
+    return render(request, 'index.html', context={'form': form})
 
 
 def get_html_content(form):
