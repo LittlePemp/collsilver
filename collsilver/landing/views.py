@@ -9,6 +9,9 @@ from .forms import OrderForm
 
 ITEM_PRICE = 225
 DELIVERY_PRICE = 300
+EMAIL_MANUFACTURER_FORM = 'static/email.html'
+EMAIL_CUSTOMER_FORM = 'static/feedback.html'
+
 
 spams = dict()
 
@@ -35,24 +38,15 @@ def index(request):
                 messages.add_message(request, messages.ERROR, msg)
                 return render(request, 'index.html', context={'form': form})
 
-            html_content = get_html_content(form)
-
             # Send mail exeptions
             try:
-                mail = EmailMultiAlternatives(
-                    'Коллоидное серебро',
-                    html_content,
-                    settings.EMAIL_HOST_USER,
-                    [settings.EMAIL_RECIPIENT],
-                )
-                mail.attach_alternative(html_content, "text/html")
-                mail.send()
+                mailing(form)  # Send to manufacturer and customer
 
                 spams[user_ip] = dt.now()
                 msg_log_level = messages.SUCCESS
                 msg = 'Спасибо! Мы в скором времени свяжемся с Вами!'
 
-            except TypeError:
+            except Exception as error:
                 msg_log_level = messages.ERROR
                 msg = (
                     'Ой... Пошло что-то не так... '
@@ -69,8 +63,31 @@ def index(request):
     return render(request, 'index.html', context={'form': form})
 
 
-def get_html_content(form):
-    with open('static/email.html', 'r') as f:
+def send_mail(html_content, recipient):
+    mail = EmailMultiAlternatives(
+        'Коллоидное серебро',
+        html_content,
+        settings.EMAIL_HOST_USER,
+        [recipient],
+    )
+    mail.attach_alternative(html_content, "text/html")
+    mail.send()
+
+
+def mailing(form):
+    # Send mail to manufacturer
+    html_content = get_html_content(form, EMAIL_MANUFACTURER_FORM)
+    recipient = settings.EMAIL_RECIPIENT
+    send_mail(html_content, recipient)
+
+    # Send mail to customer
+    html_content = get_html_content(form, EMAIL_CUSTOMER_FORM)
+    recipient = form.cleaned_data.get('email')
+    send_mail(html_content, recipient)
+
+
+def get_html_content(form, form_template):
+    with open(form_template, 'r') as f:
         html_content = f.read()
 
     if form.cleaned_data.get('comment') == '':
