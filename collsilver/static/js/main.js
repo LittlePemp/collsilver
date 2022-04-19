@@ -6,13 +6,16 @@ $(function(){
             $('#succes-post-modal').arcticmodal();
         }
         if ($(".error")[0]) {
-            $('#succes-post-modal').arcticmodal();
+            $('#error-post-modal').arcticmodal();
         }
 
 
         // Browser for input autocomplete off
         var ua = navigator.userAgent;    
         if (ua.search(/YaBrowser/) > 0) {
+            $('#id_address').attr('autocomplete', 'autocomplete-off');
+        }
+        if (ua.search(/Chrome/) > 0) {
             $('#id_address').attr('autocomplete', 'autocomplete-off');
         }
     });
